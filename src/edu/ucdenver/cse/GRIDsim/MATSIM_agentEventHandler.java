@@ -79,14 +79,14 @@ public class MATSIM_agentEventHandler implements LinkEnterEventHandler, LinkLeav
 	public void handleEvent(LinkEnterEvent event) {
 			
 		// Tell our agent where it is
-		ourAgents.get(event.getPersonId().toString()).setLink(event.getLinkId().toString());
+		ourAgents.get(event.getVehicleId().toString()).setLink(event.getLinkId().toString());
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public void handleEvent(LinkLeaveEvent event) {
 
-		GRIDagent tempAgent = ourAgents.get(event.getPersonId().toString());
+		GRIDagent tempAgent = ourAgents.get(event.getVehicleId().toString());
 		
 		if (tempAgent != null) {
 
@@ -100,7 +100,7 @@ public class MATSIM_agentEventHandler implements LinkEnterEventHandler, LinkLeav
 		}
 		else {
 			// This is bad, an agent we don't know about just left a link
-			logWriter.log(Level.WARNING, "Agent: " + event.getPersonId().toString() + " just left a link, but we don't know that agent!");
+			logWriter.log(Level.WARNING, "Agent: " + event.getVehicleId().toString() + " just left a link, but we don't know that agent!");
 		}
 	}
 

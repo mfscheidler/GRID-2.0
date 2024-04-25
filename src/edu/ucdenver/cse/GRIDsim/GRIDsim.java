@@ -29,7 +29,7 @@ import org.matsim.core.mobsim.framework.Mobsim;
 import org.matsim.core.mobsim.qsim.QSim;
 import org.matsim.core.mobsim.qsim.QSimUtils;
 import org.matsim.core.router.TripRouter;
-import org.matsim.core.router.TripRouterProviderImpl;
+//import org.matsim.core.router.TripRouterProviderImpl;
 import com.google.inject.Provider;
 
 import edu.ucdenver.cse.GRIDclient.GRIDrequestSender;
@@ -187,9 +187,7 @@ public class GRIDsim {
 					this.bindMobsim().toProvider(new Provider<Mobsim>() {
 						public Mobsim get() {
 							// construct necessary trip router:
-							TripRouter router = new TripRouterProviderImpl(controler.getScenario(),
-									controler.getTravelDisutilityFactory(), travelTime,
-									controler.getLeastCostPathCalculatorFactory(), controler.getTransitRouterFactory()).get();
+							TripRouter router = new TripRouter();
 
 							// construct qsim and insert listeners:
 							QSim qSim = QSimUtils.createDefaultQSim(controler.getScenario(), controler.getEvents());
