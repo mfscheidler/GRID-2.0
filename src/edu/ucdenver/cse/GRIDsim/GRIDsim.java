@@ -23,7 +23,7 @@ import org.matsim.core.config.*;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy.OverwriteFileSetting;
 import org.matsim.core.scenario.ScenarioUtils;
-import org.matsim.withinday.trafficmonitoring.TravelTimeCollector;
+import org.matsim.withinday.trafficmonitoring.WithinDayTravelTime; //TravelTimeCollector;
 import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.mobsim.framework.Mobsim;
 import org.matsim.core.mobsim.qsim.QSim;
@@ -31,7 +31,6 @@ import org.matsim.core.mobsim.qsim.QSimUtils;
 import org.matsim.core.router.TripRouter;
 //import org.matsim.core.router.TripRouterProviderImpl;
 import com.google.inject.Provider;
-
 import edu.ucdenver.cse.GRIDclient.GRIDrequestSender;
 import edu.ucdenver.cse.GRIDcommon.GRIDagent;
 import edu.ucdenver.cse.GRIDmap.GRIDmap;
@@ -166,7 +165,8 @@ public class GRIDsim {
 			// From WithinDayReplanning
 			Set<String> analyzedModes = new HashSet<String>();
 			analyzedModes.add(TransportMode.car);
-			final TravelTimeCollector travelTime = new TravelTimeCollector(controler.getScenario(), analyzedModes);
+			// MFS changed from TravelTimeCollector to WithinDayTraveTime
+			final WithinDayTravelTime travelTime = new WithinDayTravelTime(controler.getScenario(), analyzedModes);
 			controler.getEvents().addHandler(travelTime);
 			// end WithinDayReplanning
 			
@@ -187,6 +187,8 @@ public class GRIDsim {
 					this.bindMobsim().toProvider(new Provider<Mobsim>() {
 						public Mobsim get() {
 							// construct necessary trip router:
+							// MFS removed args from TripRouter and changed from TripRouterProviderImpl to upgrade
+							// from 0.7.0 to 0.8.0
 							TripRouter router = new TripRouter();
 
 							// construct qsim and insert listeners:

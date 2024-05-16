@@ -147,7 +147,7 @@ public class PopulationGenerator {
 
 			plan.addActivity(activity1);
 			plan.addLeg(populationFactory.createLeg("car"));
-			Id<Link> workLinkId = Id.createLinkId(trips.get(idSeed).getDectinationLocation());
+			Id<Link> workLinkId = Id.createLinkId(trips.get(idSeed).getDestinationLocation());
 
 			Activity activity2 = populationFactory.createActivityFromLinkId("w", workLinkId);
 			activity2.setEndTime((times.get(idSeed)+distribution.generateRandom(0, 28800, rnd))%86400);
@@ -158,7 +158,8 @@ public class PopulationGenerator {
 			// If the following is commented out, the agent will not leave the 2nd destination, I.E. it's "home"
 			//activity3.setEndTime((activity2.getEndTime()+distribution.generateRandom(0, 28800, rnd))%86400);
 			plan.addActivity(activity3);
-			plan.addLeg(populationFactory.createLeg("car"));
+			//MFS I don't think this last leg is necessary/valid for matsim starting v0.10.1
+			//plan.addLeg(populationFactory.createLeg("car"));
 		}
 
 		MatsimWriter popWriter = new PopulationWriter(population, network);

@@ -6,6 +6,10 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class FileUtils {
+	// MFS this private constructor is used to prevent the compiler from creating a default constructor
+	private FileUtils(){
+		throw new AssertionError();
+	}
 	
 	public static String chooseFile() {
 		JFileChooser chooser = new JFileChooser();

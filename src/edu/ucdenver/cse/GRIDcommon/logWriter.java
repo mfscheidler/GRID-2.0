@@ -117,7 +117,7 @@ public class logWriter {
 		}
 		
 		finally {
-			System.out.println("We are done");
+			System.out.println("And we're done");
 		}	
 	}
 }

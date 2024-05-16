@@ -107,7 +107,7 @@ public class MATSIM_simEventHandler implements MobsimBeforeSimStepListener, Mobs
 			}
 		}
 
-		// Make this a configurable value, and also track it's time
+		// Make this a configurable value, and also track its time
 		
 		// This currently doesn't do anything - MATSIM does not update the speed of the links
 		// Make our own speed calc?
