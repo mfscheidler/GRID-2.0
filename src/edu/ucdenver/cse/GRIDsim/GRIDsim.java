@@ -22,16 +22,14 @@ import org.matsim.api.core.v01.TransportMode;
 import org.matsim.core.config.*;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy.OverwriteFileSetting;
-import org.matsim.core.mobsim.qsim.QSimBuilder;
 import org.matsim.core.scenario.ScenarioUtils;
 import org.matsim.withinday.trafficmonitoring.WithinDayTravelTime; //TravelTimeCollector;
 import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.mobsim.framework.Mobsim;
 import org.matsim.core.mobsim.qsim.QSim;
-//import org.matsim.core.mobsim.qsim.QSimUtils; //rmoved for 12 updateexit
-
+import org.matsim.core.mobsim.qsim.QSimUtils;
 import org.matsim.core.router.TripRouter;
-//import org.matsim.core.router.TripRouterProviderImpl; // removed for 080 update
+//import org.matsim.core.router.TripRouterProviderImpl;
 import com.google.inject.Provider;
 import edu.ucdenver.cse.GRIDclient.GRIDrequestSender;
 import edu.ucdenver.cse.GRIDcommon.GRIDagent;
@@ -191,12 +189,10 @@ public class GRIDsim {
 							// construct necessary trip router:
 							// MFS removed args from TripRouter and changed from TripRouterProviderImpl to upgrade
 							// from 0.7.0 to 0.8.0
-							//TripRouter router = new TripRouter();
-							TripRouter router = controler.getTripRouterProvider().get();
+							TripRouter router = new TripRouter();
 
 							// construct qsim and insert listeners:
-							//QSim qSim = QSimUtils.createDefaultQSim(controler.getScenario(), controler.getEvents());
-							QSim qSim = new QSimBuilder(config).build(controler.getScenario(), controler.getEvents());
+							QSim qSim = QSimUtils.createDefaultQSim(controler.getScenario(), controler.getEvents());
 							
 							MATSIM_simEventHandler theSimHandler = new MATSIM_simEventHandler(router);
 							
