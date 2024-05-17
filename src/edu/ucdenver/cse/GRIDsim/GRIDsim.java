@@ -146,10 +146,10 @@ public class GRIDsim {
 			
 			ConfigUtils.loadConfig(config, configFile);
 			
-			config.controler().setLastIteration(0);
-			config.controler().setOutputDirectory("./output");
+			config.controller().setLastIteration(0);
+			config.controller().setOutputDirectory("./output");
 			
-			config.controler().setOverwriteFileSetting(OverwriteFileSetting.deleteDirectoryIfExists);
+			config.controller().setOverwriteFileSetting(OverwriteFileSetting.deleteDirectoryIfExists);
 
 			Scenario scenario = ScenarioUtils.loadScenario(config) ;
 
