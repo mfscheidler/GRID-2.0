@@ -26,17 +26,17 @@ public class GRIDpathfinder {
     	visitedIntersections = new Vector<String>(theMap.getIntersectionIDs().size());
         routeSegments = new ConcurrentHashMap<String, GRIDrouteSegment>();
 
-        if (weightType.equalsIgnoreCase("TEST")) {
-        	logWriter.log(Level.INFO, "Alternate weight function: TEST selected");
+        if (weightType.equalsIgnoreCase("SPEED")) {
+        	logWriter.log(Level.INFO, "Alternate weight function: SPEED selected");
 
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
-        	theWeighter = new GRIDweightTimeAvg(ourMap);
+        	theWeighter = new GRIDweightEmissions(ourMap);
         }
         
         else {
         	// If no valid weighting class is selected, use the default:
         	theWeighter = new GRIDweightTimeAvg(ourMap);
-        }       
+        }
     }
     
     public void init() {

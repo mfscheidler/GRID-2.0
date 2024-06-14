@@ -1,14 +1,19 @@
 package edu.ucdenver.cse.GRIDweight;
 
 import edu.ucdenver.cse.GRIDcommon.GRIDroute;
+import edu.ucdenver.cse.GRIDmap.GRIDmap;
+import edu.ucdenver.cse.GRIDmap.GRIDroad;
 
 public class GRIDweightEmissions implements GRIDweight {
 
-    public double calcWeight(double in, double out){
-        return 0.0;
+    final GRIDmap theMap;
+
+    public GRIDweightEmissions(GRIDmap map) {
+        this.theMap = map;
     }
 
-    public double calcEmissions (Double currentSpeed, Double roadLength) {
+    @Override
+    public double calcWeight (String fromNode, String toNode, long startTime) {
         /* BEGIN test output */
         /*System.out.println("ideal time: "+roadLength/idealSpeed);
         System.out.println("roadLength: "+roadLength);
@@ -17,31 +22,37 @@ public class GRIDweightEmissions implements GRIDweight {
         /* System.out.println("emissions: "+emissions);*/
         /* END test output */
 
-        // emissions = roadLength/idealSpeed + (roadLength*(currentSpeed-idealSpeed));
+        GRIDroad road = theMap.hasRoad(fromNode, toNode);
 
-        if(currentSpeed < idealSpeedLow){
-            //System.out.println("too slow");
-            return (roadLength/idealSpeedLow + (idealSpeedLow-currentSpeed));
+        double currentSpeed = road.getCurrentSpeed();
+        double roadLength = road.getLength();
+
+        double emissions = 0.0;
+
+        if(currentSpeed <= tierOne){
+            emissions = ((currentSpeed/tierOne)*tierOneEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed > idealSpeedHigh){
-            //System.out.println("too fast");
-            //return (roadLength/idealSpeedHigh + (currentSpeed-idealSpeedHigh));
-            return Double.POSITIVE_INFINITY;
+        else if(currentSpeed <= tierTwo){
+            emissions = ((currentSpeed/tierTwo)*tierTwoEmissions)*roadLength/mileInMeters;
         }
-        else{
-            //System.out.println("just right");
-            return roadLength/idealSpeedLow + currentSpeed-idealSpeedLow;
+        else if(currentSpeed < idealSpeedLow){
+            emissions = ((currentSpeed/idealSpeedLow)*sweetSpotEmissions)*roadLength/mileInMeters;
         }
+        else if(currentSpeed >= idealSpeedLow && currentSpeed <= idealSpeedHigh){
+            emissions = sweetSpotEmissions/mileInMeters;
+        }
+        else if(currentSpeed <= tierThree){
+            emissions = ((currentSpeed/tierThree)*tierThreeEmissions)*roadLength/mileInMeters;
+        }
+        else{   // this conditional handles values above tierThree and below and above tierFour
+            emissions = ((currentSpeed/tierFour)*tierFourEmissions)*roadLength/mileInMeters;
+        }
+
+        return emissions;
     }
 
     public GRIDroute resetEmissionsForAgent() {
         GRIDroute newRoute = new GRIDroute();
         return newRoute;
     }
-
-	@Override
-	public double calcWeight(String fromNode, String toNode, long startTime) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
