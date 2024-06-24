@@ -99,6 +99,7 @@ public class GRIDsim {
 		logWriter.setLogPrefix("SIM");
 
 		double totalTravelTime = 0;
+		double totalEmissions = 0.0;
 
 		// Load our version of the map first
 		GRIDmapReader masterMap = new GRIDmapReader();
@@ -216,6 +217,7 @@ public class GRIDsim {
 			controler.run();
 
 			totalTravelTime = theAgentHandler.getTotalTravelTime();
+			totalEmissions = theAgentHandler.getTotalEmissions();
 		}
 
 		catch ( Exception ee ) {
@@ -226,7 +228,10 @@ public class GRIDsim {
 		}
 
 		System.out.println("\n\nTotal travel time was: " + totalTravelTime + " seconds");
+		System.out.println("\nTotal emissions are: " + totalEmissions + " G/Mile");
 		logWriter.log(Level.INFO, "Total travel time was: " + totalTravelTime + " seconds");
+		logWriter.log(Level.INFO, "Total emissions are: " + totalEmissions + " G/Mile");
+
 
 		Long stopTime = System.currentTimeMillis();
 

@@ -27,7 +27,8 @@ public class GRIDpathfinder {
         routeSegments = new ConcurrentHashMap<String, GRIDrouteSegment>();
 
         if (weightType.equalsIgnoreCase("SPEED")) {
-        	logWriter.log(Level.INFO, "Alternate weight function: SPEED selected");
+        	logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
+            System.out.println("Alternate weight function \"SPEED\" selected");
 
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
         	theWeighter = new GRIDweightEmissions(ourMap);
@@ -53,6 +54,8 @@ public class GRIDpathfinder {
         String agentFrom; 
         String agentTo;
         String agentID;
+
+        double totalEmissions = 0.0;
 
         // The agent is already on the link, so we need its endpoint
         agentID = thisAgent.getId();
@@ -140,6 +143,7 @@ public class GRIDpathfinder {
                 GRIDfibHeap.Entry dest = fibEntryList.get(arc);
 
                 double newWeight = calcWeight + arrivalWeight;
+                totalEmissions += newWeight;
                 		
                 // If we can get to dest for less than the previous best, we want to use this route
                 if (newWeight < dest.getWtTotal())
@@ -181,6 +185,12 @@ public class GRIDpathfinder {
                                                            
         GRIDroute finalRoute = new GRIDroute();
         finalRoute.setAgent_ID(agentID);
+
+        // MFS
+        finalRoute.setRouteEmissions(totalEmissions);
+        finalRoute.setCalculatedTravelTime(tempNode.getNodeTimeTotal());
+
+        System.out.println("Time: " + finalRoute.getCalculatedTravelTime());
         
         // Start with the destination and build the route recursively
         
@@ -232,7 +242,10 @@ public class GRIDpathfinder {
         
         logWriter.log(Level.INFO, "calculated route for agent: " + thisAgent +
         		                  " from: " + agentFrom + 
-        		                  " to: " + agentTo + "is: " + finalRoute.toString());
+        		                  " to: " + agentTo + " is: " + finalRoute.toString());
+
+        // MFS emissions test -- don't think these figures are accurate emissions
+        System.out.println("Total Weight: " + finalRoute.getRouteEmissions());
         return finalRoute;
     }
 

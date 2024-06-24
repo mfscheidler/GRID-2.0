@@ -15,6 +15,7 @@ public class GRIDagent {
     private Long fuelEconomy;
     private Long vehOccupancy;
     private Double vehSize;
+    private double totalEmissions;
     private double departureTime;
     private boolean routeHasChanged = false; // set to let the agent know it has a new route
     
@@ -33,6 +34,7 @@ public class GRIDagent {
         this.simCalcFlag      = simFlag;
         this.needsDestination = needDest;
         this.vehSize          = 4.5;
+        this.totalEmissions   = 0.0;
     }
 	
 	public GRIDagent(String Id, String curLink, String destination) {
@@ -57,6 +59,7 @@ public class GRIDagent {
     public void setEmissions(Double mewEmissions){ }
     public void setVehOccupancy(Long vehOccupancy){ this.vehOccupancy = vehOccupancy; }
     public void setVehSize(Double vehSize){ this.vehSize = vehSize; }
+    public void setTotalEmissions(Double totalEmissions){ this.totalEmissions = totalEmissions; }
 	public void setDepartureTime(Double newDepartureTime) { this.departureTime = newDepartureTime; }
 	public void setRouteHasChanged(boolean hasRouteChanged) { this.routeHasChanged = hasRouteChanged; }
 	
@@ -74,6 +77,7 @@ public class GRIDagent {
     public Long getFuelEconomy(){ return this.fuelEconomy; }
     public Long getVehOccupancy(){ return this.vehOccupancy; }
     public Double getVehSize(){ return this.vehSize; }
+    public double getTotalEmissions(){ return this.totalEmissions; }
     public Double getDepartureTime() { return this.departureTime; }
 	public boolean getRouteHasChanged() { return this.routeHasChanged; }
 	

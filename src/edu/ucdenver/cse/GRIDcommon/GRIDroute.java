@@ -12,6 +12,9 @@ public class GRIDroute implements Serializable {
 	private String agent_ID;
 	
 	private ArrayList<GRIDrouteSegment> RouteSegments;
+
+	private double routeEmissions = 0.0;
+	private long calculatedTravelTime = 0L;
 	
 	public GRIDroute() {
 		//Intersections = new ArrayList<String>(2);
@@ -45,14 +48,20 @@ public class GRIDroute implements Serializable {
 	public void setAgent_ID(String agent_ID) {
 		this.agent_ID = agent_ID;
 	}
+
+	public void setRouteEmissions(double routeEmissions) { this.routeEmissions = routeEmissions; }
+
+	public void setCalculatedTravelTime(long travelTime){ this.calculatedTravelTime = travelTime; }
 	
 	//public ArrayList<String> getIntersections(){ return this.Intersections; }
 	public String getAgent_ID(){ return this.agent_ID; }
+
+	public double getRouteEmissions(){ return this.routeEmissions; }
 	
 	//public ArrayList<String> getRoads() {return this.Roads; }
 	//public void setRoads(ArrayList<String> theRoads) { this.Roads = theRoads; }
 
-	public long getcalculatedTravelTime(){ 
+	public long getCalculatedTravelTime(){
 		long travelTime = 0;
 
 		// RCS FIX THIS TO DO SOMETHING
@@ -88,7 +97,7 @@ public class GRIDroute implements Serializable {
 	}
 	
 	public String toString() {
-		String theRouteStr = "Route: ";
+		String theRouteStr = "";
 		
 		for(GRIDrouteSegment segment:this.RouteSegments ) {
 			theRouteStr += " " + segment.toString();

@@ -1,0 +1,31 @@
+Weight Type: speed
+Total Road Length: 1.8518 miles
+Total Emissions: 696.2488970107066 G
+
+Weight Type: weightTimeAvg
+Total Road Length: 2.0461 miles
+Total Emissions: 708.6937400285806 G
+
+Weight Type: speed
+Total Road Length: 3.5935 miles
+Total Emissions: 1203.35562144291 G
+
+Weight Type: weightTimeAvg
+Total Road Length: 3.5935 miles
+Total Emissions: 1203.35562144291 G
+
+Weight Type: speed
+Total Road Length: 1.6308 miles
+Total Emissions: 601.7584204561794 G
+368.9958 G/Mile
+
+Weight Type: weightTimeAvg
+Total Road Length: 1.6619 miles
+Total Emissions: 608.1257666860362 G
+365.921996922821 G/Mile
+
+Weight Type: speed
+Total Road Length:	1.6308 miles
+Total Emissions:	601.7584 G
+Grams per MIle:		368.9958
+

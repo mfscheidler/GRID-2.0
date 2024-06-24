@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
 
+import org.matsim.api.core.v01.events.Event;
 import org.matsim.api.core.v01.events.LinkEnterEvent;
 import org.matsim.api.core.v01.events.LinkLeaveEvent;
 import org.matsim.api.core.v01.events.PersonArrivalEvent;
@@ -31,6 +32,7 @@ public class MATSIM_agentEventHandler implements LinkEnterEventHandler, LinkLeav
 	GRIDmap ourMap;
 	
 	double totalTravelTime = 0;
+	double totalEmissions = 0.0;
 	
 	Queue<String> agentsToReplan;
 
@@ -49,8 +51,10 @@ public class MATSIM_agentEventHandler implements LinkEnterEventHandler, LinkLeav
 	public void setAgentsToReplan(Queue<String> agentsToReplan) {
 		this.agentsToReplan = agentsToReplan;
 	}
+	public void setTotalEmissions(double moreEmissions) { this.totalEmissions = moreEmissions; }
 
 	public double getTotalTravelTime() { return totalTravelTime; }
+	public double getTotalEmissions() { return totalEmissions; }
 
 	// This should NEVER get called
 	public void setTotalTravelTime(double totalTravelTime) {
@@ -129,7 +133,7 @@ public class MATSIM_agentEventHandler implements LinkEnterEventHandler, LinkLeav
 	}
 
 	@Override
-	public void handleEvent(PersonDepartureEvent event) {	
+	public void handleEvent(PersonDepartureEvent event) {
 		
 		boolean simFlag;
 		
@@ -154,8 +158,8 @@ public class MATSIM_agentEventHandler implements LinkEnterEventHandler, LinkLeav
 				                           "", simFlag, true );  
 
 		// Here, we need to create a new agent. 
-		newAgent.setDepartureTime(event.getTime());			
+		newAgent.setDepartureTime(event.getTime());
+		//newAgent.setEmissions(event.);
 		ourAgents.put(newAgent.getId(), newAgent);
 	}
 }
-

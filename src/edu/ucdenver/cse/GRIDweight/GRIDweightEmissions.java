@@ -29,22 +29,28 @@ public class GRIDweightEmissions implements GRIDweight {
 
         double emissions = 0.0;
 
-        if(currentSpeed <= tierOne){
-            emissions = ((currentSpeed/tierOne)*tierOneEmissions)*roadLength/mileInMeters;
+        if(currentSpeed == 0){
+            return MAX_WEIGHT;
+        }
+        else if(currentSpeed <= tierOne){
+            emissions = ((tierOne/currentSpeed)*tierOneEmissions)*roadLength/mileInMeters;
         }
         else if(currentSpeed <= tierTwo){
-            emissions = ((currentSpeed/tierTwo)*tierTwoEmissions)*roadLength/mileInMeters;
+            emissions = ((tierTwo/currentSpeed)*tierTwoEmissions)*roadLength/mileInMeters;
         }
         else if(currentSpeed < idealSpeedLow){
-            emissions = ((currentSpeed/idealSpeedLow)*sweetSpotEmissions)*roadLength/mileInMeters;
+            emissions = ((idealSpeedLow/currentSpeed)*sweetSpotEmissions)*roadLength/mileInMeters;
         }
         else if(currentSpeed >= idealSpeedLow && currentSpeed <= idealSpeedHigh){
-            emissions = sweetSpotEmissions/mileInMeters;
+            emissions = sweetSpotEmissions*(roadLength/mileInMeters);
         }
         else if(currentSpeed <= tierThree){
-            emissions = ((currentSpeed/tierThree)*tierThreeEmissions)*roadLength/mileInMeters;
+            emissions = ((tierThree/currentSpeed)*tierThreeEmissions)*roadLength/mileInMeters;
         }
-        else{   // this conditional handles values above tierThree and below and above tierFour
+        else if(currentSpeed <= tierFour){
+            emissions = ((tierFour/currentSpeed)*tierFourEmissions)*roadLength/mileInMeters;
+        }
+        else{
             emissions = ((currentSpeed/tierFour)*tierFourEmissions)*roadLength/mileInMeters;
         }
 
