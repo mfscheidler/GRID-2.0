@@ -1,21 +1,18 @@
 package edu.ucdenver.cse.GRIDutil;
 
-import java.io.File;
 import java.nio.file.*;
 import java.io.IOException;
 import java.lang.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import static org.apache.commons.io.FileUtils.writeStringToFile;
 
 public class SpeedReader {
-    public static void readWriteSpeedString(String finalRoute, String fileName, String weightType) throws Exception {
+    public EmissionsContainer readWriteSpeedString(String finalRoute, String fileName) throws Exception {
 
+        EmissionsContainer emissionsContainer = new EmissionsContainer();
         String[] links = finalRoute.split(" ");
-
         Charset encoding = StandardCharsets.UTF_8;
+
         // reading in map file as a string
         String mapData = "";
         String outData = "";
@@ -49,26 +46,18 @@ public class SpeedReader {
         }
 
         // send speed data & road length as string to calculate emissions; weightType sent for output purposes
-        EmissionsCalculator.initEmissionsCalculator(outData, weightType);
+        emissionsContainer = EmissionsCalculator.initEmissionsCalculator(outData);
 
-        try{
-            Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss") ;
-            File file = new File("Emissions_Test_Results\\" + dateFormat.format(date) + "_" + weightType + "_data.txt") ;
-            writeStringToFile(new File(String.valueOf(file)), outData, encoding);
-        } catch (IOException e) {
-            throw new Exception(e);
-        }
+        System.out.println("end of line\n");
 
-        System.out.println("end of line");
+        return emissionsContainer;
     }
 
     public static String readFileAsString(String filename)
             throws Exception
     {
         String data = "";
-        data = new String(
-                Files.readAllBytes(Paths.get(filename)));
+        data = new String(Files.readAllBytes(Paths.get(filename)));
         return data;
     }
 

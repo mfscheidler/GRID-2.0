@@ -1,0 +1,963 @@
+Total Road Length for Agent:	1.8518 miles
+Total Emissions for Agent:		696.2489 G
+Grams per MIle for Agent:		375.9849
+
+Total Road Length for Agent:	3.5935 miles
+Total Emissions for Agent:		1203.3556 G
+Grams per MIle for Agent:		334.8701
+
+Total Road Length for Agent:	1.6308 miles
+Total Emissions for Agent:		601.7584 G
+Grams per MIle for Agent:		368.9958
+
+Total Road Length for Agent:	1.6838 miles
+Total Emissions for Agent:		622.8947 G
+Grams per MIle for Agent:		369.9339
+
+Total Road Length for Agent:	1.5437 miles
+Total Emissions for Agent:		558.2203 G
+Grams per MIle for Agent:		361.6119
+
+Total Road Length for Agent:	1.1517 miles
+Total Emissions for Agent:		381.086 G
+Grams per MIle for Agent:		330.89
+
+Total Road Length for Agent:	4.1221 miles
+Total Emissions for Agent:		1426.7381 G
+Grams per MIle for Agent:		346.1192
+
+Total Road Length for Agent:	5.486 miles
+Total Emissions for Agent:		1909.9826 G
+Grams per MIle for Agent:		348.1558
+
+Total Road Length for Agent:	2.7939 miles
+Total Emissions for Agent:		956.3935 G
+Grams per MIle for Agent:		342.3148
+
+Total Road Length for Agent:	4.627 miles
+Total Emissions for Agent:		1610.1094 G
+Grams per MIle for Agent:		347.9813
+
+Total Road Length for Agent:	3.3104 miles
+Total Emissions for Agent:		1174.4631 G
+Grams per MIle for Agent:		354.7798
+
+Total Road Length for Agent:	2.4067 miles
+Total Emissions for Agent:		813.5442 G
+Grams per MIle for Agent:		338.0331
+
+Total Road Length for Agent:	4.1638 miles
+Total Emissions for Agent:		1441.2503 G
+Grams per MIle for Agent:		346.1382
+
+Total Road Length for Agent:	3.9693 miles
+Total Emissions for Agent:		1349.665 G
+Grams per MIle for Agent:		340.0259
+
+Total Road Length for Agent:	5.5528 miles
+Total Emissions for Agent:		1926.6282 G
+Grams per MIle for Agent:		346.9652
+
+Total Road Length for Agent:	1.0307 miles
+Total Emissions for Agent:		355.3932 G
+Grams per MIle for Agent:		344.8076
+
+Total Road Length for Agent:	2.2713 miles
+Total Emissions for Agent:		754.2158 G
+Grams per MIle for Agent:		332.0635
+
+Total Road Length for Agent:	2.8188 miles
+Total Emissions for Agent:		962.2602 G
+Grams per MIle for Agent:		341.3723
+
+Total Road Length for Agent:	5.3467 miles
+Total Emissions for Agent:		1742.7633 G
+Grams per MIle for Agent:		325.9512
+
+Total Road Length for Agent:	1.5873 miles
+Total Emissions for Agent:		575.068 G
+Grams per MIle for Agent:		362.2932
+
+Total Road Length for Agent:	1.7906 miles
+Total Emissions for Agent:		598.1703 G
+Grams per MIle for Agent:		334.0614
+
+Total Road Length for Agent:	3.9204 miles
+Total Emissions for Agent:		1317.9561 G
+Grams per MIle for Agent:		336.179
+
+Total Road Length for Agent:	2.5761 miles
+Total Emissions for Agent:		856.6554 G
+Grams per MIle for Agent:		332.5396
+
+Total Road Length for Agent:	3.4323 miles
+Total Emissions for Agent:		1189.4786 G
+Grams per MIle for Agent:		346.5544
+
+Total Road Length for Agent:	2.239 miles
+Total Emissions for Agent:		772.2914 G
+Grams per MIle for Agent:		344.9269
+
+Total Road Length for Agent:	2.0505 miles
+Total Emissions for Agent:		711.4712 G
+Grams per MIle for Agent:		346.9745
+
+Total Road Length for Agent:	3.2204 miles
+Total Emissions for Agent:		1070.0187 G
+Grams per MIle for Agent:		332.2627
+
+Total Road Length for Agent:	4.965 miles
+Total Emissions for Agent:		1691.7675 G
+Grams per MIle for Agent:		340.7387
+
+Total Road Length for Agent:	1.8816 miles
+Total Emissions for Agent:		687.3407 G
+Grams per MIle for Agent:		365.2959
+
+Total Road Length for Agent:	3.5538 miles
+Total Emissions for Agent:		1178.3039 G
+Grams per MIle for Agent:		331.5617
+
+Total Road Length for Agent:	2.1767 miles
+Total Emissions for Agent:		734.775 G
+Grams per MIle for Agent:		337.5637
+
+Total Road Length for Agent:	3.1971 miles
+Total Emissions for Agent:		1056.4915 G
+Grams per MIle for Agent:		330.4531
+
+Total Road Length for Agent:	2.8998 miles
+Total Emissions for Agent:		1007.6097 G
+Grams per MIle for Agent:		347.4756
+
+Total Road Length for Agent:	2.2294 miles
+Total Emissions for Agent:		745.815 G
+Grams per MIle for Agent:		334.5362
+
+Total Road Length for Agent:	5.7343 miles
+Total Emissions for Agent:		1979.3649 G
+Grams per MIle for Agent:		345.1799
+
+Total Road Length for Agent:	3.7531 miles
+Total Emissions for Agent:		1243.8127 G
+Grams per MIle for Agent:		331.4094
+
+Total Road Length for Agent:	3.3144 miles
+Total Emissions for Agent:		1136.3992 G
+Grams per MIle for Agent:		342.8672
+
+Total Road Length for Agent:	4.0609 miles
+Total Emissions for Agent:		1392.0934 G
+Grams per MIle for Agent:		342.8042
+
+Total Road Length for Agent:	3.524 miles
+Total Emissions for Agent:		1153.8869 G
+Grams per MIle for Agent:		327.4367
+
+Total Road Length for Agent:	1.4818 miles
+Total Emissions for Agent:		568.1586 G
+Grams per MIle for Agent:		383.4246
+
+Total Road Length for Agent:	3.4188 miles
+Total Emissions for Agent:		1176.6886 G
+Grams per MIle for Agent:		344.1818
+
+Total Road Length for Agent:	3.6792 miles
+Total Emissions for Agent:		1240.5362 G
+Grams per MIle for Agent:		337.1755
+
+Total Road Length for Agent:	3.0289 miles
+Total Emissions for Agent:		1084.5609 G
+Grams per MIle for Agent:		358.0709
+
+Total Road Length for Agent:	3.2398 miles
+Total Emissions for Agent:		1147.5172 G
+Grams per MIle for Agent:		354.1938
+
+Total Road Length for Agent:	5.5588 miles
+Total Emissions for Agent:		1960.3798 G
+Grams per MIle for Agent:		352.6624
+
+Total Road Length for Agent:	2.5576 miles
+Total Emissions for Agent:		891.9225 G
+Grams per MIle for Agent:		348.7342
+
+Total Road Length for Agent:	1.7128 miles
+Total Emissions for Agent:		581.2776 G
+Grams per MIle for Agent:		339.3727
+
+Total Road Length for Agent:	1.9988 miles
+Total Emissions for Agent:		720.2709 G
+Grams per MIle for Agent:		360.3517
+
+Total Road Length for Agent:	0.299 miles
+Total Emissions for Agent:		160.6794 G
+Grams per MIle for Agent:		537.3892
+
+Total Road Length for Agent:	6.1309 miles
+Total Emissions for Agent:		2020.5632 G
+Grams per MIle for Agent:		329.5704
+
+Total Road Length for Agent:	1.8912 miles
+Total Emissions for Agent:		669.5949 G
+Grams per MIle for Agent:		354.0582
+
+Total Road Length for Agent:	1.6557 miles
+Total Emissions for Agent:		595.8107 G
+Grams per MIle for Agent:		359.8543
+
+Total Road Length for Agent:	3.5875 miles
+Total Emissions for Agent:		1281.2001 G
+Grams per MIle for Agent:		357.1289
+
+Total Road Length for Agent:	2.5465 miles
+Total Emissions for Agent:		860.4176 G
+Grams per MIle for Agent:		337.8824
+
+Total Road Length for Agent:	2.9488 miles
+Total Emissions for Agent:		976.8064 G
+Grams per MIle for Agent:		331.2555
+
+Total Road Length for Agent:	5.2954 miles
+Total Emissions for Agent:		2038.3656 G
+Grams per MIle for Agent:		384.9314
+
+Total Road Length for Agent:	1.0622 miles
+Total Emissions for Agent:		352.6029 G
+Grams per MIle for Agent:		331.9553
+
+Total Road Length for Agent:	2.582 miles
+Total Emissions for Agent:		903.0435 G
+Grams per MIle for Agent:		349.7457
+
+Total Road Length for Agent:	7.3231 miles
+Total Emissions for Agent:		2491.0688 G
+Grams per MIle for Agent:		340.1659
+
+Total Road Length for Agent:	2.1203 miles
+Total Emissions for Agent:		707.889 G
+Grams per MIle for Agent:		333.8627
+
+Total Road Length for Agent:	3.658 miles
+Total Emissions for Agent:		1250.2499 G
+Grams per MIle for Agent:		341.7851
+
+Total Road Length for Agent:	1.933 miles
+Total Emissions for Agent:		692.5539 G
+Grams per MIle for Agent:		358.2793
+
+Total Road Length for Agent:	3.2278 miles
+Total Emissions for Agent:		1073.6932 G
+Grams per MIle for Agent:		332.6393
+
+Total Road Length for Agent:	4.7024 miles
+Total Emissions for Agent:		1557.9478 G
+Grams per MIle for Agent:		331.3091
+
+Total Road Length for Agent:	4.1902 miles
+Total Emissions for Agent:		1411.0851 G
+Grams per MIle for Agent:		336.7584
+
+Total Road Length for Agent:	3.5694 miles
+Total Emissions for Agent:		1211.846 G
+Grams per MIle for Agent:		339.5097
+
+Total Road Length for Agent:	2.4395 miles
+Total Emissions for Agent:		822.4102 G
+Grams per MIle for Agent:		337.1224
+
+Total Road Length for Agent:	2.1865 miles
+Total Emissions for Agent:		723.2841 G
+Grams per MIle for Agent:		330.7954
+
+Total Road Length for Agent:	7.0067 miles
+Total Emissions for Agent:		2278.1792 G
+Grams per MIle for Agent:		325.143
+
+Total Road Length for Agent:	1.3998 miles
+Total Emissions for Agent:		499.9733 G
+Grams per MIle for Agent:		357.1748
+
+Total Road Length for Agent:	2.567 miles
+Total Emissions for Agent:		849.0798 G
+Grams per MIle for Agent:		330.7673
+
+Total Road Length for Agent:	0.5531 miles
+Total Emissions for Agent:		212.3067 G
+Grams per MIle for Agent:		383.8487
+
+Total Road Length for Agent:	2.1994 miles
+Total Emissions for Agent:		762.6081 G
+Grams per MIle for Agent:		346.7346
+
+Total Road Length for Agent:	2.2691 miles
+Total Emissions for Agent:		792.3754 G
+Grams per MIle for Agent:		349.2025
+
+Total Road Length for Agent:	5.3857 miles
+Total Emissions for Agent:		1756.0356 G
+Grams per MIle for Agent:		326.0552
+
+Total Road Length for Agent:	0.9715 miles
+Total Emissions for Agent:		353.4175 G
+Grams per MIle for Agent:		363.7854
+
+Total Road Length for Agent:	2.5368 miles
+Total Emissions for Agent:		858.7541 G
+Grams per MIle for Agent:		338.5186
+
+Total Road Length for Agent:	2.1855 miles
+Total Emissions for Agent:		794.6739 G
+Grams per MIle for Agent:		363.6119
+
+Total Road Length for Agent:	3.4579 miles
+Total Emissions for Agent:		1146.9242 G
+Grams per MIle for Agent:		331.6823
+
+Total Road Length for Agent:	4.4115 miles
+Total Emissions for Agent:		1687.5072 G
+Grams per MIle for Agent:		382.5246
+
+Total Road Length for Agent:	3.7396 miles
+Total Emissions for Agent:		1307.1152 G
+Grams per MIle for Agent:		349.5334
+
+Total Road Length for Agent:	0.1809 miles
+Total Emissions for Agent:		92.1388 G
+Grams per MIle for Agent:		509.3357
+
+Total Road Length for Agent:	4.0486 miles
+Total Emissions for Agent:		1378.3972 G
+Grams per MIle for Agent:		340.4627
+
+Total Road Length for Agent:	4.3329 miles
+Total Emissions for Agent:		1488.3301 G
+Grams per MIle for Agent:		343.4951
+
+Total Road Length for Agent:	4.0995 miles
+Total Emissions for Agent:		1476.1945 G
+Grams per MIle for Agent:		360.0914
+
+Total Road Length for Agent:	2.1315 miles
+Total Emissions for Agent:		714.0243 G
+Grams per MIle for Agent:		334.9868
+
+Total Road Length for Agent:	1.8659 miles
+Total Emissions for Agent:		606.43 G
+Grams per MIle for Agent:		325.0067
+
+Total Road Length for Agent:	7.8052 miles
+Total Emissions for Agent:		2698.5151 G
+Grams per MIle for Agent:		345.733
+
+Total Road Length for Agent:	1.7094 miles
+Total Emissions for Agent:		572.5964 G
+Grams per MIle for Agent:		334.9692
+
+Total Road Length for Agent:	1.145 miles
+Total Emissions for Agent:		374.2252 G
+Grams per MIle for Agent:		326.8342
+
+Total Road Length for Agent:	2.8104 miles
+Total Emissions for Agent:		994.9843 G
+Grams per MIle for Agent:		354.0366
+
+Total Road Length for Agent:	0.9375 miles
+Total Emissions for Agent:		310.6784 G
+Grams per MIle for Agent:		331.3903
+
+Total Road Length for Agent:	3.3039 miles
+Total Emissions for Agent:		1100.723 G
+Grams per MIle for Agent:		333.1587
+
+Total Road Length for Agent:	4.0919 miles
+Total Emissions for Agent:		1383.7521 G
+Grams per MIle for Agent:		338.1686
+
+Total Road Length for Agent:	0.9034 miles
+Total Emissions for Agent:		317.9965 G
+Grams per MIle for Agent:		351.9996
+
+Total Road Length for Agent:	1.4392 miles
+Total Emissions for Agent:		544.404 G
+Grams per MIle for Agent:		378.2684
+
+Total Road Length for Agent:	1.3389 miles
+Total Emissions for Agent:		498.2795 G
+Grams per MIle for Agent:		372.1559
+
+Total Road Length for Agent:	1.2268 miles
+Total Emissions for Agent:		402.8043 G
+Grams per MIle for Agent:		328.3374
+
+Total Road Length for Agent:	2.6335 miles
+Total Emissions for Agent:		947.5044 G
+Grams per MIle for Agent:		359.789
+
+Total Road Length for Agent:	2.3901 miles
+Total Emissions for Agent:		783.3258 G
+Grams per MIle for Agent:		327.7376
+
+Total Road Length for Agent:	1.2641 miles
+Total Emissions for Agent:		466.2182 G
+Grams per MIle for Agent:		368.8143
+
+Total Road Length for Agent:	1.5155 miles
+Total Emissions for Agent:		534.7062 G
+Grams per MIle for Agent:		352.8249
+
+Total Road Length for Agent:	2.5899 miles
+Total Emissions for Agent:		892.0381 G
+Grams per MIle for Agent:		344.4296
+
+Total Road Length for Agent:	4.512 miles
+Total Emissions for Agent:		1564.7733 G
+Grams per MIle for Agent:		346.8026
+
+Total Road Length for Agent:	1.9139 miles
+Total Emissions for Agent:		675.1147 G
+Grams per MIle for Agent:		352.7429
+
+Total Road Length for Agent:	1.578 miles
+Total Emissions for Agent:		571.7285 G
+Grams per MIle for Agent:		362.3121
+
+Total Road Length for Agent:	5.2708 miles
+Total Emissions for Agent:		1716.447 G
+Grams per MIle for Agent:		325.6521
+
+Total Road Length for Agent:	4.6722 miles
+Total Emissions for Agent:		1566.8072 G
+Grams per MIle for Agent:		335.3468
+
+Total Road Length for Agent:	0.5232 miles
+Total Emissions for Agent:		204.0793 G
+Grams per MIle for Agent:		390.0597
+
+Total Road Length for Agent:	5.1301 miles
+Total Emissions for Agent:		1768.9686 G
+Grams per MIle for Agent:		344.8215
+
+Total Road Length for Agent:	5.0038 miles
+Total Emissions for Agent:		1706.5254 G
+Grams per MIle for Agent:		341.0459
+
+Total Road Length for Agent:	3.3568 miles
+Total Emissions for Agent:		1103.8733 G
+Grams per MIle for Agent:		328.8469
+
+Total Road Length for Agent:	3.9883 miles
+Total Emissions for Agent:		1385.8027 G
+Grams per MIle for Agent:		347.467
+
+Total Road Length for Agent:	5.3791 miles
+Total Emissions for Agent:		1779.6467 G
+Grams per MIle for Agent:		330.8447
+
+Total Road Length for Agent:	4.7084 miles
+Total Emissions for Agent:		1539.608 G
+Grams per MIle for Agent:		326.9918
+
+Total Road Length for Agent:	4.8731 miles
+Total Emissions for Agent:		1655.2989 G
+Grams per MIle for Agent:		339.6809
+
+Total Road Length for Agent:	2.5103 miles
+Total Emissions for Agent:		821.4463 G
+Grams per MIle for Agent:		327.2303
+
+Total Road Length for Agent:	5.4291 miles
+Total Emissions for Agent:		1863.3288 G
+Grams per MIle for Agent:		343.2114
+
+Total Road Length for Agent:	1.6417 miles
+Total Emissions for Agent:		551.4847 G
+Grams per MIle for Agent:		335.923
+
+Total Road Length for Agent:	2.1923 miles
+Total Emissions for Agent:		747.8779 G
+Grams per MIle for Agent:		341.1385
+
+Total Road Length for Agent:	1.8162 miles
+Total Emissions for Agent:		605.8921 G
+Grams per MIle for Agent:		333.6043
+
+Total Road Length for Agent:	1.4085 miles
+Total Emissions for Agent:		477.7376 G
+Grams per MIle for Agent:		339.1818
+
+Total Road Length for Agent:	5.1517 miles
+Total Emissions for Agent:		1713.8486 G
+Grams per MIle for Agent:		332.6763
+
+Total Road Length for Agent:	2.1347 miles
+Total Emissions for Agent:		807.1452 G
+Grams per MIle for Agent:		378.1071
+
+Total Road Length for Agent:	4.0175 miles
+Total Emissions for Agent:		1452.4551 G
+Grams per MIle for Agent:		361.5321
+
+Total Road Length for Agent:	3.6817 miles
+Total Emissions for Agent:		1207.4682 G
+Grams per MIle for Agent:		327.9649
+
+Total Road Length for Agent:	1.951 miles
+Total Emissions for Agent:		662.2529 G
+Grams per MIle for Agent:		339.4428
+
+Total Road Length for Agent:	1.7926 miles
+Total Emissions for Agent:		627.1613 G
+Grams per MIle for Agent:		349.8613
+
+Total Road Length for Agent:	5.0356 miles
+Total Emissions for Agent:		1733.9996 G
+Grams per MIle for Agent:		344.3482
+
+Total Road Length for Agent:	4.4571 miles
+Total Emissions for Agent:		1727.0486 G
+Grams per MIle for Agent:		387.4826
+
+Total Road Length for Agent:	2.283 miles
+Total Emissions for Agent:		770.0842 G
+Grams per MIle for Agent:		337.3124
+
+Total Road Length for Agent:	2.2778 miles
+Total Emissions for Agent:		899.3668 G
+Grams per MIle for Agent:		394.8401
+
+Total Road Length for Agent:	3.9955 miles
+Total Emissions for Agent:		1329.8171 G
+Grams per MIle for Agent:		332.8287
+
+Total Road Length for Agent:	1.7379 miles
+Total Emissions for Agent:		599.2426 G
+Grams per MIle for Agent:		344.8085
+
+Total Road Length for Agent:	2.5685 miles
+Total Emissions for Agent:		849.7708 G
+Grams per MIle for Agent:		330.8432
+
+Total Road Length for Agent:	2.6999 miles
+Total Emissions for Agent:		932.1725 G
+Grams per MIle for Agent:		345.2618
+
+Total Road Length for Agent:	7.014 miles
+Total Emissions for Agent:		2295.1341 G
+Grams per MIle for Agent:		327.2219
+
+Total Road Length for Agent:	2.9418 miles
+Total Emissions for Agent:		966.7832 G
+Grams per MIle for Agent:		328.6366
+
+Total Road Length for Agent:	3.2905 miles
+Total Emissions for Agent:		1121.7572 G
+Grams per MIle for Agent:		340.9078
+
+Total Road Length for Agent:	1.4949 miles
+Total Emissions for Agent:		537.1893 G
+Grams per MIle for Agent:		359.348
+
+Total Road Length for Agent:	2.1634 miles
+Total Emissions for Agent:		763.813 G
+Grams per MIle for Agent:		353.0614
+
+Total Road Length for Agent:	2.2724 miles
+Total Emissions for Agent:		766.3754 G
+Grams per MIle for Agent:		337.2538
+
+Total Road Length for Agent:	4.0651 miles
+Total Emissions for Agent:		1370.3542 G
+Grams per MIle for Agent:		337.1022
+
+Total Road Length for Agent:	4.5522 miles
+Total Emissions for Agent:		1562.954 G
+Grams per MIle for Agent:		343.3404
+
+Total Road Length for Agent:	5.7921 miles
+Total Emissions for Agent:		1948.9958 G
+Grams per MIle for Agent:		336.4921
+
+Total Road Length for Agent:	6.4633 miles
+Total Emissions for Agent:		2168.0183 G
+Grams per MIle for Agent:		335.4352
+
+Total Road Length for Agent:	4.3561 miles
+Total Emissions for Agent:		1471.5632 G
+Grams per MIle for Agent:		337.8167
+
+Total Road Length for Agent:	2.4658 miles
+Total Emissions for Agent:		822.0292 G
+Grams per MIle for Agent:		333.3722
+
+Total Road Length for Agent:	1.7174 miles
+Total Emissions for Agent:		573.223 G
+Grams per MIle for Agent:		333.7737
+
+Total Road Length for Agent:	1.9166 miles
+Total Emissions for Agent:		630.7454 G
+Grams per MIle for Agent:		329.096
+
+Total Road Length for Agent:	1.3576 miles
+Total Emissions for Agent:		456.8614 G
+Grams per MIle for Agent:		336.5214
+
+Total Road Length for Agent:	1.6355 miles
+Total Emissions for Agent:		546.4111 G
+Grams per MIle for Agent:		334.0942
+
+Total Road Length for Agent:	4.1701 miles
+Total Emissions for Agent:		1390.4075 G
+Grams per MIle for Agent:		333.4231
+
+Total Road Length for Agent:	3.4614 miles
+Total Emissions for Agent:		1232.9109 G
+Grams per MIle for Agent:		356.1885
+
+Total Road Length for Agent:	2.3904 miles
+Total Emissions for Agent:		795.5515 G
+Grams per MIle for Agent:		332.811
+
+Total Road Length for Agent:	1.503 miles
+Total Emissions for Agent:		523.2082 G
+Grams per MIle for Agent:		348.1093
+
+Total Road Length for Agent:	1.3903 miles
+Total Emissions for Agent:		463.1328 G
+Grams per MIle for Agent:		333.1172
+
+Total Road Length for Agent:	3.5185 miles
+Total Emissions for Agent:		1210.6173 G
+Grams per MIle for Agent:		344.072
+
+Total Road Length for Agent:	1.6118 miles
+Total Emissions for Agent:		565.4902 G
+Grams per MIle for Agent:		350.8439
+
+Total Road Length for Agent:	3.2355 miles
+Total Emissions for Agent:		1244.1237 G
+Grams per MIle for Agent:		384.5229
+
+Total Road Length for Agent:	1.4837 miles
+Total Emissions for Agent:		534.2016 G
+Grams per MIle for Agent:		360.0469
+
+Total Road Length for Agent:	5.5398 miles
+Total Emissions for Agent:		1833.3676 G
+Grams per MIle for Agent:		330.9447
+
+Total Road Length for Agent:	3.6977 miles
+Total Emissions for Agent:		1237.3867 G
+Grams per MIle for Agent:		334.6369
+
+Total Road Length for Agent:	0.8166 miles
+Total Emissions for Agent:		322.2368 G
+Grams per MIle for Agent:		394.6078
+
+Total Road Length for Agent:	2.7811 miles
+Total Emissions for Agent:		934.7835 G
+Grams per MIle for Agent:		336.1201
+
+Total Road Length for Agent:	3.4324 miles
+Total Emissions for Agent:		1193.7571 G
+Grams per MIle for Agent:		347.7908
+
+Total Road Length for Agent:	3.1538 miles
+Total Emissions for Agent:		1085.2001 G
+Grams per MIle for Agent:		344.0929
+
+Total Road Length for Agent:	2.4736 miles
+Total Emissions for Agent:		883.8161 G
+Grams per MIle for Agent:		357.2995
+
+Total Road Length for Agent:	1.4056 miles
+Total Emissions for Agent:		489.0018 G
+Grams per MIle for Agent:		347.8955
+
+Total Road Length for Agent:	3.277 miles
+Total Emissions for Agent:		1139.4387 G
+Grams per MIle for Agent:		347.7079
+
+Total Road Length for Agent:	4.7835 miles
+Total Emissions for Agent:		1574.3673 G
+Grams per MIle for Agent:		329.1245
+
+Total Road Length for Agent:	2.9962 miles
+Total Emissions for Agent:		991.9371 G
+Grams per MIle for Agent:		331.0651
+
+Total Road Length for Agent:	4.3162 miles
+Total Emissions for Agent:		1462.8195 G
+Grams per MIle for Agent:		338.9137
+
+Total Road Length for Agent:	2.1578 miles
+Total Emissions for Agent:		720.7474 G
+Grams per MIle for Agent:		334.0196
+
+Total Road Length for Agent:	1.3306 miles
+Total Emissions for Agent:		520.3814 G
+Grams per MIle for Agent:		391.0878
+
+Total Road Length for Agent:	4.0262 miles
+Total Emissions for Agent:		1343.4661 G
+Grams per MIle for Agent:		333.6809
+
+Total Road Length for Agent:	5.0593 miles
+Total Emissions for Agent:		1805.2771 G
+Grams per MIle for Agent:		356.8235
+
+Total Road Length for Agent:	2.9836 miles
+Total Emissions for Agent:		1005.3365 G
+Grams per MIle for Agent:		336.9542
+
+Total Road Length for Agent:	5.8775 miles
+Total Emissions for Agent:		1913.7167 G
+Grams per MIle for Agent:		325.6005
+
+Total Road Length for Agent:	1.4618 miles
+Total Emissions for Agent:		564.9162 G
+Grams per MIle for Agent:		386.4525
+
+Total Road Length for Agent:	2.9017 miles
+Total Emissions for Agent:		999.9504 G
+Grams per MIle for Agent:		344.6085
+
+Total Road Length for Agent:	1.5641 miles
+Total Emissions for Agent:		528.3916 G
+Grams per MIle for Agent:		337.8247
+
+Total Road Length for Agent:	5.0831 miles
+Total Emissions for Agent:		1713.68 G
+Grams per MIle for Agent:		337.1329
+
+Total Road Length for Agent:	3.9555 miles
+Total Emissions for Agent:		1307.4968 G
+Grams per MIle for Agent:		330.5516
+
+Total Road Length for Agent:	3.1776 miles
+Total Emissions for Agent:		1051.7911 G
+Grams per MIle for Agent:		331.0017
+
+Total Road Length for Agent:	5.0093 miles
+Total Emissions for Agent:		1665.1395 G
+Grams per MIle for Agent:		332.4096
+
+Total Road Length for Agent:	0.8729 miles
+Total Emissions for Agent:		299.4388 G
+Grams per MIle for Agent:		343.0391
+
+Total Road Length for Agent:	1.3195 miles
+Total Emissions for Agent:		458.7471 G
+Grams per MIle for Agent:		347.6674
+
+Total Road Length for Agent:	4.4737 miles
+Total Emissions for Agent:		1686.8048 G
+Grams per MIle for Agent:		377.0492
+
+Total Road Length for Agent:	3.5248 miles
+Total Emissions for Agent:		1155.3491 G
+Grams per MIle for Agent:		327.7772
+
+Total Road Length for Agent:	3.068 miles
+Total Emissions for Agent:		1003.1304 G
+Grams per MIle for Agent:		326.9656
+
+Total Road Length for Agent:	0.7737 miles
+Total Emissions for Agent:		267.3772 G
+Grams per MIle for Agent:		345.5826
+
+Total Road Length for Agent:	1.3225 miles
+Total Emissions for Agent:		549.0898 G
+Grams per MIle for Agent:		415.1908
+
+Total Road Length for Agent:	0.5083 miles
+Total Emissions for Agent:		203.7455 G
+Grams per MIle for Agent:		400.8371
+
+Total Road Length for Agent:	5.866 miles
+Total Emissions for Agent:		1962.9782 G
+Grams per MIle for Agent:		334.6366
+
+Total Road Length for Agent:	2.532 miles
+Total Emissions for Agent:		866.0894 G
+Grams per MIle for Agent:		342.0574
+
+Total Road Length for Agent:	4.5525 miles
+Total Emissions for Agent:		1557.6366 G
+Grams per MIle for Agent:		342.1497
+
+Total Road Length for Agent:	4.5763 miles
+Total Emissions for Agent:		1528.3967 G
+Grams per MIle for Agent:		333.9809
+
+Total Road Length for Agent:	6.3306 miles
+Total Emissions for Agent:		2140.1576 G
+Grams per MIle for Agent:		338.0655
+
+Total Road Length for Agent:	2.1038 miles
+Total Emissions for Agent:		751.3401 G
+Grams per MIle for Agent:		357.1348
+
+Total Road Length for Agent:	2.1534 miles
+Total Emissions for Agent:		724.4962 G
+Grams per MIle for Agent:		336.4429
+
+Total Road Length for Agent:	3.1531 miles
+Total Emissions for Agent:		1074.9264 G
+Grams per MIle for Agent:		340.911
+
+Total Road Length for Agent:	2.1156 miles
+Total Emissions for Agent:		770.355 G
+Grams per MIle for Agent:		364.1308
+
+Total Road Length for Agent:	3.0179 miles
+Total Emissions for Agent:		1051.5402 G
+Grams per MIle for Agent:		348.4344
+
+Total Road Length for Agent:	3.6994 miles
+Total Emissions for Agent:		1256.961 G
+Grams per MIle for Agent:		339.7743
+
+Total Road Length for Agent:	4.1675 miles
+Total Emissions for Agent:		1404.6485 G
+Grams per MIle for Agent:		337.0482
+
+Total Road Length for Agent:	1.5911 miles
+Total Emissions for Agent:		596.7606 G
+Grams per MIle for Agent:		375.0616
+
+Total Road Length for Agent:	2.8474 miles
+Total Emissions for Agent:		982.8807 G
+Grams per MIle for Agent:		345.1853
+
+Total Road Length for Agent:	6.43 miles
+Total Emissions for Agent:		2185.3503 G
+Grams per MIle for Agent:		339.8679
+
+Total Road Length for Agent:	0.2388 miles
+Total Emissions for Agent:		85.8304 G
+Grams per MIle for Agent:		359.4239
+
+Total Road Length for Agent:	1.0928 miles
+Total Emissions for Agent:		451.1804 G
+Grams per MIle for Agent:		412.8664
+
+Total Road Length for Agent:	0.9091 miles
+Total Emissions for Agent:		333.4712 G
+Grams per MIle for Agent:		366.8147
+
+Total Road Length for Agent:	5.2427 miles
+Total Emissions for Agent:		1803.8126 G
+Grams per MIle for Agent:		344.0618
+
+Total Road Length for Agent:	3.3126 miles
+Total Emissions for Agent:		1101.9309 G
+Grams per MIle for Agent:		332.6483
+
+Total Road Length for Agent:	2.655 miles
+Total Emissions for Agent:		875.2203 G
+Grams per MIle for Agent:		329.6498
+
+Total Road Length for Agent:	2.3389 miles
+Total Emissions for Agent:		850.4136 G
+Grams per MIle for Agent:		363.5955
+
+Total Road Length for Agent:	1.5895 miles
+Total Emissions for Agent:		559.2993 G
+Grams per MIle for Agent:		351.8712
+
+Total Road Length for Agent:	4.1783 miles
+Total Emissions for Agent:		1457.9781 G
+Grams per MIle for Agent:		348.9405
+
+Total Road Length for Agent:	5.5127 miles
+Total Emissions for Agent:		2083.3354 G
+Grams per MIle for Agent:		377.9156
+
+Total Road Length for Agent:	7.7638 miles
+Total Emissions for Agent:		2541.1846 G
+Grams per MIle for Agent:		327.312
+
+Total Road Length for Agent:	4.6155 miles
+Total Emissions for Agent:		1562.6786 G
+Grams per MIle for Agent:		338.5719
+
+Total Road Length for Agent:	4.2938 miles
+Total Emissions for Agent:		1419.7324 G
+Grams per MIle for Agent:		330.6471
+
+Total Road Length for Agent:	3.5801 miles
+Total Emissions for Agent:		1203.2374 G
+Grams per MIle for Agent:		336.0904
+
+Total Road Length for Agent:	2.0333 miles
+Total Emissions for Agent:		729.3425 G
+Grams per MIle for Agent:		358.6989
+
+Total Road Length for Agent:	4.6469 miles
+Total Emissions for Agent:		1546.2346 G
+Grams per MIle for Agent:		332.7454
+
+Total Road Length for Agent:	2.2408 miles
+Total Emissions for Agent:		772.1826 G
+Grams per MIle for Agent:		344.6013
+
+Total Road Length for Agent:	2.3024 miles
+Total Emissions for Agent:		753.7625 G
+Grams per MIle for Agent:		327.3812
+
+Total Road Length for Agent:	0.2656 miles
+Total Emissions for Agent:		106.7492 G
+Grams per MIle for Agent:		401.9174
+
+Total Road Length for Agent:	4.1089 miles
+Total Emissions for Agent:		1400.4465 G
+Grams per MIle for Agent:		340.8325
+
+Total Road Length for Agent:	5.1885 miles
+Total Emissions for Agent:		1854.6241 G
+Grams per MIle for Agent:		357.449
+
+Total Road Length for Agent:	4.8017 miles
+Total Emissions for Agent:		1567.8268 G
+Grams per MIle for Agent:		326.5149
+
+Total Road Length for Agent:	1.7583 miles
+Total Emissions for Agent:		627.3569 G
+Grams per MIle for Agent:		356.7974
+
+Total Road Length for Agent:	7.236 miles
+Total Emissions for Agent:		2496.3044 G
+Grams per MIle for Agent:		344.984
+
+Total Road Length for Agent:	2.2928 miles
+Total Emissions for Agent:		771.9884 G
+Grams per MIle for Agent:		336.7011
+
+Total Road Length for Agent:	1.0029 miles
+Total Emissions for Agent:		329.9229 G
+Grams per MIle for Agent:		328.9689
+
+Total Road Length for Agent:	4.3845 miles
+Total Emissions for Agent:		1617.6071 G
+Grams per MIle for Agent:		368.9376
+
+Total Road Length for Agent:	3.588 miles
+Total Emissions for Agent:		1169.9645 G
+Grams per MIle for Agent:		326.0771
+
+Total Road Length for Agent:	5.465 miles
+Total Emissions for Agent:		1841.6494 G
+Grams per MIle for Agent:		336.9898
+
+Total Road Length for Agent:	2.7702 miles
+Total Emissions for Agent:		900.3116 G
+Grams per MIle for Agent:		324.9988
+
+Total Road Length for Agent:	3.4244 miles
+Total Emissions for Agent:		1126.3296 G
+Grams per MIle for Agent:		328.913
+
+Total Miles:		748.9861
+Total Emissions:	256924.0202
+G/Mile:				343.02909

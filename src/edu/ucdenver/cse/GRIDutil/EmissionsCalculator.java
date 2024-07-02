@@ -1,50 +1,32 @@
 package edu.ucdenver.cse.GRIDutil;
 
-import java.io.File;
-import java.io.IOException;
 import java.lang.Exception;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.lang.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import static org.apache.commons.io.FileUtils.writeStringToFile;
 
 public class EmissionsCalculator {
 
-    public static void initEmissionsCalculator(String inData, String weightType) throws Exception {
-        Charset encoding = StandardCharsets.UTF_8;
+    public static EmissionsContainer initEmissionsCalculator(String inData) throws Exception {
         String[] splitSpeedResults = inData.split("\n");
-        String outData = "Weight Type: " + weightType + "\n";
+        EmissionsContainer emissionsContainer = new EmissionsContainer();
 
-        outData += calculateEmissions(splitSpeedResults);
+        emissionsContainer = calculateEmissions(splitSpeedResults);
 
-        try{
-            Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd") ;
-            File file = new File("Emissions_Test_Results\\" + dateFormat.format(date) + "_test_results.txt") ;
-            writeStringToFile(new File(String.valueOf(file)), outData, encoding, true);
-        } catch (IOException e) {
-            throw new Exception(e);
-        }
-
+        return emissionsContainer;
     }
 
-    public static String calculateEmissions(String[] splitSpeedResults){
+    public static EmissionsContainer calculateEmissions(String[] splitSpeedResults){
         double roadLength = 0.0;
         double currentSpeed = 0.0;
         double emissions = 0.0;
         double totalRoadLength = 0.0;
         double mileInMeters = 1609.34;
         String tempString = "";
-
-        //System.out.println("Array Length: " + splitSpeedResults.length);
+        String sysString = "";
 
         for(int i = 0; i < splitSpeedResults.length; i++){
             int startIndex = 0;
             int stopIndex = 0;
-            startIndex = splitSpeedResults[i].indexOf('\"', startIndex);
+            startIndex = splitSpeedResults[i].indexOf("length=", startIndex);
             stopIndex = splitSpeedResults[i].indexOf('\t', startIndex);
             tempString = splitSpeedResults[i].substring(startIndex, stopIndex).replaceAll("[^\\d.]", "");
 
@@ -79,21 +61,32 @@ public class EmissionsCalculator {
             else if(currentSpeed == 33.333333333333336){
                 emissions += (roadLength/mileInMeters)*450;
             }
+            // else to catch potentially uncovered speeds, this shouldn't happen
+            else{
+                System.out.println("*****UNCOVERED SPEED***** " + currentSpeed);
+                sysString = "\n*****UNCOVERED SPEED***** " + currentSpeed + "\n\n";
+            }
         }
 
         double lengthInMiles = (double)Math.round(totalRoadLength/mileInMeters * 10000d) / 10000d;
         double gramsPerMile = (double)Math.round(emissions/lengthInMiles * 10000d) / 10000d;
         emissions = (double)Math.round(emissions * 10000d) / 10000d;
 
-        System.out.println("\nTotal Road Length:\t" + lengthInMiles + " miles");
-        System.out.println("Total Emissions:\t" + emissions + " G");
-        System.out.println("Grams per Mile:\t\t" + gramsPerMile + "\n");
+        System.out.println("\nTotal Road Length for Agent:\t" + lengthInMiles + " miles");
+        System.out.println("Total Emissions for Agent:\t" + emissions + " G");
+        System.out.println("Grams per Mile for Agent:\t" + gramsPerMile + "\n");
 
         String endString = "";
-        endString += "Total Road Length:\t" + lengthInMiles + " miles";
-        endString += "\nTotal Emissions:\t" + emissions + " G";
-        endString += "\nGrams per MIle:\t\t" + gramsPerMile + "\n\n";
+        endString += "\nTotal Road Length for Agent:\t" + lengthInMiles + " miles";
+        endString += "\nTotal Emissions for Agent:\t\t" + emissions + " G";
+        endString += "\nGrams per MIle for Agent:\t\t" + gramsPerMile + "\n\n";
+        endString += sysString;
 
-        return endString;
+        EmissionsContainer emissionsContainer = new EmissionsContainer();
+        emissionsContainer.setEmissionsTotal(emissions);
+        emissionsContainer.setRoadLengthTotal(lengthInMiles);
+        emissionsContainer.setOutputString(endString);
+
+        return emissionsContainer;
     }
 }

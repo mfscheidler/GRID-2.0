@@ -28,7 +28,6 @@ public class GRIDpathfinder {
 
         if (weightType.equalsIgnoreCase("SPEED")) {
         	logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
-            System.out.println("Alternate weight function \"SPEED\" selected");
 
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
         	theWeighter = new GRIDweightEmissions(ourMap);
@@ -185,12 +184,6 @@ public class GRIDpathfinder {
                                                            
         GRIDroute finalRoute = new GRIDroute();
         finalRoute.setAgent_ID(agentID);
-
-        // MFS
-        finalRoute.setRouteEmissions(totalEmissions);
-        finalRoute.setCalculatedTravelTime(tempNode.getNodeTimeTotal());
-
-        System.out.println("Time: " + finalRoute.getCalculatedTravelTime());
         
         // Start with the destination and build the route recursively
         
@@ -244,8 +237,7 @@ public class GRIDpathfinder {
         		                  " from: " + agentFrom + 
         		                  " to: " + agentTo + " is: " + finalRoute.toString());
 
-        // MFS emissions test -- don't think these figures are accurate emissions
-        System.out.println("Total Weight: " + finalRoute.getRouteEmissions());
+
         return finalRoute;
     }
 
