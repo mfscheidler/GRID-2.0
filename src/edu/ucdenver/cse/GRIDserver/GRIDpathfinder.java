@@ -27,7 +27,7 @@ public class GRIDpathfinder {
         routeSegments = new ConcurrentHashMap<String, GRIDrouteSegment>();
 
         if (weightType.equalsIgnoreCase("SPEED")) {
-        	logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
+        	//logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
 
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
         	theWeighter = new GRIDweightEmissions(ourMap);
@@ -73,7 +73,7 @@ public class GRIDpathfinder {
         if (agentTo.equals(agentFrom)) {
         	
         	// RCS clean this up
-        	logWriter.log(Level.WARNING, "Agent: " + thisAgent.getId() + " already at destination: " + agentTo);
+        	//logWriter.log(Level.WARNING, "Agent: " + thisAgent.getId() + " already at destination: " + agentTo);
         	return genDummyRoute("ARRIVED");
         }
         
@@ -97,10 +97,10 @@ public class GRIDpathfinder {
         long arrivalTime;
     	double arrivalWeight;
         
-    	logWriter.log(Level.INFO, "Starting route for: " + agentID +
+    	/*logWriter.log(Level.INFO, "Starting route for: " + agentID +
     			                  " from: " + agentFrom +
     			                  " to: "   + agentTo +
-    			                  " at time: " + currentTime);
+    			                  " at time: " + currentTime);*/
     			                  
         while (!pq.isEmpty())
         {
@@ -188,7 +188,7 @@ public class GRIDpathfinder {
         // Start with the destination and build the route recursively
         
         if(!routeSegments.containsKey(agentTo)){
-            logWriter.log(Level.WARNING, "Agent " + agentID + " is going to: " + agentTo + " - but that doesn't exist in the returned list");
+            //logWriter.log(Level.WARNING, "Agent " + agentID + " is going to: " + agentTo + " - but that doesn't exist in the returned list");
             System.out.println("Agent " + agentID + " is going to: " + agentTo + " - but that doesn't exist in the returned list");
         	return genDummyRoute("Destination unreachable");
         }
@@ -196,7 +196,7 @@ public class GRIDpathfinder {
         tempSegment = (GRIDrouteSegment) routeSegments.get(agentTo);
         
         if( tempSegment == null) {
-        	logWriter.log(Level.WARNING, "Destination intersection not found in route! from was: " + agentFrom + " dest was: " + agentTo);
+        	//logWriter.log(Level.WARNING, "Destination intersection not found in route! from was: " + agentFrom + " dest was: " + agentTo);
         	return genDummyRoute("Destination unreachable");
         }
         
@@ -206,7 +206,7 @@ public class GRIDpathfinder {
         // If this is the only segment needed for the route
         if (tempSegment.getStartIntersection().equals(agentFrom)) {
         	//System.out.println("Agent " + agentID + " only has 1 leg in it's route" );
-        	logWriter.log(Level.INFO, "GRIDpathfinder::findPath - Agent " + agentID + " only has 1 leg in it's route - the next step should be arrival" );
+        	//logWriter.log(Level.INFO, "GRIDpathfinder::findPath - Agent " + agentID + " only has 1 leg in it's route - the next step should be arrival" );
         }
         
         else {
@@ -218,8 +218,8 @@ public class GRIDpathfinder {
 	        	// This MAY be the place where we are already at our route - I.E. we left from the s
 	        	if( tempSegment == null) {
         		
-	            	logWriter.log(Level.WARNING, "GRIDpathfinder::findPath - Destination intersection not found in route for agent: " +
-	        	                                 agentID + " from: " + agentFrom + " to: " + agentTo);
+	            	//logWriter.log(Level.WARNING, "GRIDpathfinder::findPath - Destination intersection not found in route for agent: " +
+                    //                              agentID + " from: " + agentFrom + " to: " + agentTo);
 	            	return genDummyRoute("Destination unreachable");
 	            }
 	            
@@ -233,10 +233,10 @@ public class GRIDpathfinder {
 	        }
         }
         
-        logWriter.log(Level.INFO, "calculated route for agent: " + thisAgent +
+        /*logWriter.log(Level.INFO, "calculated route for agent: " + thisAgent +
         		                  " from: " + agentFrom + 
         		                  " to: " + agentTo + " is: " + finalRoute.toString());
-
+        		                  */
 
         return finalRoute;
     }

@@ -14,13 +14,6 @@ public class GRIDweightEmissions implements GRIDweight {
 
     @Override
     public double calcWeight (String fromNode, String toNode, long startTime) {
-        /* BEGIN test output */
-        /*System.out.println("ideal time: "+roadLength/idealSpeed);
-        System.out.println("roadLength: "+roadLength);
-        System.out.println("current speed: "+currentSpeed);
-        System.out.println("negative: "+(currentSpeed-idealSpeed));
-        /* System.out.println("emissions: "+emissions);*/
-        /* END test output */
 
         GRIDroad road = theMap.hasRoad(fromNode, toNode);
 
@@ -38,20 +31,23 @@ public class GRIDweightEmissions implements GRIDweight {
         else if(currentSpeed <= tierTwo){
             emissions = ((tierTwo/currentSpeed)*tierTwoEmissions)*roadLength/mileInMeters;
         }
+        else if(currentSpeed <= tierThree){
+            emissions = ((tierThree/currentSpeed)*tierThreeEmissions)*roadLength/mileInMeters;
+        }
+        else if(currentSpeed <= tierFour){
+            emissions += ((tierFour/currentSpeed)*tierFourEmissions)*roadLength/mileInMeters;
+        }
         else if(currentSpeed < idealSpeedLow){
             emissions = ((idealSpeedLow/currentSpeed)*sweetSpotEmissions)*roadLength/mileInMeters;
         }
         else if(currentSpeed >= idealSpeedLow && currentSpeed <= idealSpeedHigh){
             emissions = sweetSpotEmissions*(roadLength/mileInMeters);
         }
-        else if(currentSpeed <= tierThree){
-            emissions = ((tierThree/currentSpeed)*tierThreeEmissions)*roadLength/mileInMeters;
-        }
-        else if(currentSpeed <= tierFour){
-            emissions = ((tierFour/currentSpeed)*tierFourEmissions)*roadLength/mileInMeters;
+        else if(currentSpeed <= tierFive){
+            emissions = ((tierFive /currentSpeed)*tierFiveEmissions)*roadLength/mileInMeters;
         }
         else{
-            emissions = ((currentSpeed/tierFour)*tierFourEmissions)*roadLength/mileInMeters;
+            emissions = ((currentSpeed/ tierFive)*tierFiveEmissions)*roadLength/mileInMeters;
         }
 
         return emissions;

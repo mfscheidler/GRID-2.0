@@ -44,22 +44,25 @@ public class EmissionsCalculator {
             by the length of the link converted to miles and multiplied by the corresponding
             G/Mile value */
             if(currentSpeed == 4.166666666666667){
-                emissions += (roadLength/mileInMeters)*760;
+                emissions += (roadLength/mileInMeters)*752.8864229923; // 760
             }
             else if(currentSpeed == 8.333333333333334){
-                emissions += (roadLength/mileInMeters)*450;
+                emissions += (roadLength/mileInMeters)*445.6267061049; // 450
             }
             else if(currentSpeed == 12.5){
-                emissions += (roadLength/mileInMeters)*360;
+                emissions += (roadLength/mileInMeters)*352.4226326999; // 360
             }
             else if(currentSpeed == 13.88888888888889){
-                emissions += (roadLength/mileInMeters)*350;
+                emissions += (roadLength/mileInMeters)*339.3114201648; // 350
             }
-            else if(currentSpeed >= 15.8333 && currentSpeed < 24.4444){ // sweet spot
-                emissions += (roadLength/mileInMeters)*325;
+            else if(currentSpeed == 16.666666666666668){
+                emissions += (roadLength/mileInMeters)*326.286752086;
+            }
+            else if(currentSpeed >= 17.8815555556 && currentSpeed < 22.3519444444){ // sweet spot
+                emissions += (roadLength/mileInMeters)*324.5; // 325
             }
             else if(currentSpeed == 33.333333333333336){
-                emissions += (roadLength/mileInMeters)*450;
+                emissions += (roadLength/mileInMeters)*374.0797563346; // 450
             }
             // else to catch potentially uncovered speeds, this shouldn't happen
             else{
