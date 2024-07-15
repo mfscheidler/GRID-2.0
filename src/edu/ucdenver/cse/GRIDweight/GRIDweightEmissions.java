@@ -35,19 +35,19 @@ public class GRIDweightEmissions implements GRIDweight {
             emissions = ((tierThree/currentSpeed)*tierThreeEmissions)*roadLength/mileInMeters;
         }
         else if(currentSpeed <= tierFour){
-            emissions += ((tierFour/currentSpeed)*tierFourEmissions)*roadLength/mileInMeters;
-        }
-        else if(currentSpeed < idealSpeedLow){
-            emissions = ((idealSpeedLow/currentSpeed)*sweetSpotEmissions)*roadLength/mileInMeters;
-        }
-        else if(currentSpeed >= idealSpeedLow && currentSpeed <= idealSpeedHigh){
-            emissions = sweetSpotEmissions*(roadLength/mileInMeters);
+            emissions = ((tierFour/currentSpeed)*tierFourEmissions)*roadLength/mileInMeters;
         }
         else if(currentSpeed <= tierFive){
-            emissions = ((tierFive /currentSpeed)*tierFiveEmissions)*roadLength/mileInMeters;
+            emissions = ((tierFive/currentSpeed)*tierFiveEmissions)*roadLength/mileInMeters;
+        }
+        else if(currentSpeed <= tierSix){
+            emissions = ((tierSix/currentSpeed)*tierSixEmissions)*roadLength/mileInMeters;
+        }
+        else if(currentSpeed <= tierSeven){
+            emissions = ((tierSeven/currentSpeed)*tierSevenEmissions)*roadLength/mileInMeters;
         }
         else{
-            emissions = ((currentSpeed/ tierFive)*tierFiveEmissions)*roadLength/mileInMeters;
+            System.out.println("*****UNCOVERED SPEED***** " + currentSpeed);
         }
 
         return emissions;

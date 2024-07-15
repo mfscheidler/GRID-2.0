@@ -10,7 +10,7 @@ public class SpeedBasedEmissionsPolynomial {
         double b_2 = 0.003915102063854;
         double b_3 = -0.000049451361017;
         double b_4 = 0.000000238630156;
-        double x = 37.2816666666666696492;
+        double x = 74.5645200000000059651616;
         double y = 0.0;
         double e = Math.E;
 
