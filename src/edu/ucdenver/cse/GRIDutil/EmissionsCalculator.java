@@ -46,6 +46,9 @@ public class EmissionsCalculator {
             if(currentSpeed == 4.166666666666667){
                 emissions += (roadLength/mileInMeters)*752.8777457604738; // 760
             }
+            else if(currentSpeed == 5.555555555555555){
+                emissions += (roadLength/mileInMeters)*606.0452455774833;
+            }
             else if(currentSpeed == 8.333333333333334){
                 emissions += (roadLength/mileInMeters)*445.6216862844991; // 450
             }
@@ -76,13 +79,13 @@ public class EmissionsCalculator {
         emissions = (double)Math.round(emissions * 10000d) / 10000d;
 
         System.out.println("\nTotal Road Length for Agent:\t" + lengthInMiles + " miles");
-        System.out.println("Total Emissions for Agent:\t" + emissions + " G");
+        System.out.println("Total Emissions for Agent:\t" + emissions + " g");
         System.out.println("Grams per Mile for Agent:\t" + gramsPerMile + "\n");
 
         String endString = "";
         endString += "\nTotal Road Length for Agent:\t" + lengthInMiles + " miles";
-        endString += "\nTotal Emissions for Agent:\t\t" + emissions + " G";
-        endString += "\nGrams per MIle for Agent:\t\t" + gramsPerMile + "\n\n";
+        endString += "\nTotal Emissions for Agent:\t\t" + emissions + " g";
+        endString += "\nGrams per Mile for Agent:\t\t" + gramsPerMile + "\n\n";
         endString += sysString;
 
         EmissionsContainer emissionsContainer = new EmissionsContainer();
