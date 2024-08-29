@@ -4,7 +4,7 @@
 /download
 .idea
 *.iml
-/JARs
+/jars
 /classes
 config/dtd/
 *.log
@@ -23,3 +23,4 @@ dependencies/javax/javax.inject-1_bkp.jar
 config/5x5Config_1_internal.xml
 /manifests
 data/AlamosaPopulation_23.xml
+/Emissions_Test_Config

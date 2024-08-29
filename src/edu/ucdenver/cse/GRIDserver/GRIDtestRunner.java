@@ -119,14 +119,14 @@ public class GRIDtestRunner{
                     outData += "Network: \t\t\t" + mapFileName + "\n";
                     outData += "Total Agents:\t\t" + splitToFromLinks.length + "\n";
                     outData += "Total Miles:\t\t" + totalMiles + "\n";
-                    outData += "Total Emissions:\t" + totalEmissions + " G\n";
-                    outData += "Average G/Mile:\t\t" + totalEmissions / totalMiles + "\n";
+                    outData += "Total Emissions:\t" + totalEmissions + " g\n";
+                    outData += "Average g/Mile:\t\t" + totalEmissions / totalMiles + "\n";
 
                     System.out.println("Network:\t\t" + mapFileName);
                     System.out.println("Total Agents:\t\t" + splitToFromLinks.length);
                     System.out.println("Total Miles:\t\t" + totalMiles);
-                    System.out.println("Total Emissions:\t" + totalEmissions);
-                    System.out.println("Average G/Mile:\t\t" + totalEmissions / totalMiles + "\n");
+                    System.out.println("Total Emissions:\t" + totalEmissions + " g\n");
+                    System.out.println("Average g/Mile:\t\t" + totalEmissions / totalMiles + "\n");
 
                     long stopTime = System.nanoTime();
                     long timeToRun = ((stopTime - startTime) / 1000000);
