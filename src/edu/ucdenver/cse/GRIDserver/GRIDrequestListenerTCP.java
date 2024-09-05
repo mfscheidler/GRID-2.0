@@ -75,7 +75,7 @@ public class GRIDrequestListenerTCP extends Thread {
 				
 				if (weAreTiming) {
 					long startTime = System.nanoTime();
-					tempRoute = theALG.findPath(tempAgent, theGRID.getTime());
+					tempRoute = theALG.findPath(tempAgent, theGRID.getTime(),1, "", "");
 					long endTime = System.nanoTime();
 
 					long duration = (endTime - startTime);
@@ -83,7 +83,7 @@ public class GRIDrequestListenerTCP extends Thread {
 					logWriter.log(Level.INFO, "Calculating the route took: " + duration + " nanoseconds");
 				}
 				else {
-					tempRoute = theALG.findPath(tempAgent, theGRID.getTime());
+					tempRoute = theALG.findPath(tempAgent, theGRID.getTime(),1, "", "");
 				}
 				
 				if (tempRoute == null) {

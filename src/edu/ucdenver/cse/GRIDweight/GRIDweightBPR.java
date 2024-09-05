@@ -17,7 +17,7 @@ public class GRIDweightBPR implements GRIDweight{
 
 	// This uses 2 intersections as from and to. Should we pass in the roadID (or obj) instead?
     @Override
-	public double calcWeight(String fromNode, String toNode, long startTime) {
+	public double calcWeight(String fromNode, String toNode, long startTime, double speedModifier) {
 
     	// calc currentSpeed
     	GRIDroad road = theMap.hasRoad(fromNode, toNode);

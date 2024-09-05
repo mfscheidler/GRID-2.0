@@ -6,9 +6,18 @@ import edu.ucdenver.cse.GRIDcommon.GRIDrouteSegment;
 import edu.ucdenver.cse.GRIDcommon.logWriter;
 import edu.ucdenver.cse.GRIDmap.*;
 import edu.ucdenver.cse.GRIDweight.*;
+import org.apache.commons.io.FilenameUtils;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.concurrent.*;
 import java.util.*;
+import static org.apache.commons.io.FileUtils.writeStringToFile;
 
 public class GRIDpathfinder {
     private GRIDmap ourMap;
@@ -19,15 +28,21 @@ public class GRIDpathfinder {
     private ConcurrentHashMap<String, GRIDrouteSegment> routeSegments;
 
     private GRIDweight theWeighter;
+    private String weightType;
+    Charset encoding = StandardCharsets.UTF_8;
+    double spdModifier = 1.0;
+
 
     public GRIDpathfinder(GRIDmap theMap, String weightType) {
     	this.ourMap = theMap;
+        this.weightType = weightType;
     	
     	visitedIntersections = new Vector<String>(theMap.getIntersectionIDs().size());
         routeSegments = new ConcurrentHashMap<String, GRIDrouteSegment>();
 
         if (weightType.equalsIgnoreCase("SPEED")) {
-        	//logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
+        	logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
+            System.out.println("Pathfinder says: Alternate weight function \"SPEED\" selected");
 
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
         	theWeighter = new GRIDweightEmissions(ourMap);
@@ -44,10 +59,10 @@ public class GRIDpathfinder {
 
     }
 
-    public GRIDroute findPath(GRIDagent thisAgent, long currentTime) {
+    public GRIDroute findPath(GRIDagent thisAgent, long currentTime, double speedModifier, String currentRoad, String modRoad) throws IOException {
         GRIDfibHeap pq = new GRIDfibHeap();
 
-        // Keep a map of all of the fibHeap entries along with the intersectionID associated with them
+        // Keep a map of all the fibHeap entries along with the intersectionID associated with them
         Map<String, GRIDfibHeap.Entry> fibEntryList = new HashMap<>();
         GRIDnode startNodeValues;
         String agentFrom; 
@@ -104,15 +119,15 @@ public class GRIDpathfinder {
     			                  
         while (!pq.isEmpty())
         {
-        	// Add the intersection that we have visited
+            // Add the intersection that we have visited
         	visitedIntersections.add(currFibEntry.getValue());
         	
             // step through every road leaving this intersection and 
             // update the priorities/weights of all of its edges.           
             for (String arc : ourMap.reachableDestinations(currFibEntry.getValue())) {
-                
             	// skip this intersection if we've already visited it
             	if (visitedIntersections.contains(arc)) {
+                    //System.out.println("\nContinue...\n");
               		continue;
             	}
 
@@ -121,6 +136,19 @@ public class GRIDpathfinder {
             	arrivalWeight = currFibEntry.getWtTotal();
             	
                 GRIDroad curRoad = ourMap.hasRoad(currFibEntry.getValue(), arc);
+
+                if(!currentRoad.isEmpty()) {
+                    System.out.println("curRoad: " + curRoad.getId() + " Current Road: " + currentRoad + "\n");
+                }
+
+                if (curRoad.getId().equals(modRoad)) { // 46131267_3 modRoad
+                    spdModifier = speedModifier;
+                    System.out.println("Current Road: " + curRoad.getId() + "\nModified Road: " + modRoad + "\n");
+                }
+                else{
+                    spdModifier = 1;
+                    currentRoad = "";
+                }
 
                 if (curRoad.equals(null)) {
                 	logWriter.log(Level.WARNING, "Unable to find road from: " + currFibEntry.getValue()+
@@ -131,7 +159,9 @@ public class GRIDpathfinder {
             	// Get the weight from the current node to the proposed node
                 calcWeight = theWeighter.calcWeight(currFibEntry.getValue(), 
                 		                            arc,
-                                                    arrivalTime);
+                                                    arrivalTime, spdModifier);
+
+
 
             	long traversalTime = curRoad.getTravelTime(currFibEntry.getTmTotal());
 
@@ -145,8 +175,7 @@ public class GRIDpathfinder {
                 totalEmissions += newWeight;
                 		
                 // If we can get to dest for less than the previous best, we want to use this route
-                if (newWeight < dest.getWtTotal())
-                {
+                if (newWeight < dest.getWtTotal()) {
                     long destArrivalTime = traversalTime + arrivalTime;
 
                     pq.decreaseKey(dest, 0D, newWeight, destArrivalTime);
@@ -171,8 +200,9 @@ public class GRIDpathfinder {
              */
             currFibEntry = pq.dequeueMin();
             tempNode.setNodeTimeTotal(currFibEntry.getTmTotal());
+        }
 
-        }  // while (!pq.isEmpty())
+        visitedIntersections.clear();
                  
         ConcurrentHashMap<String, GRIDrouteSegment> routeSegmentsByStart = new ConcurrentHashMap<String, GRIDrouteSegment>();
         // Now that we have all the segments, build the list so that we can find them easily
@@ -233,10 +263,24 @@ public class GRIDpathfinder {
 	        }
         }
         
-        /*logWriter.log(Level.INFO, "calculated route for agent: " + thisAgent +
+        logWriter.log(Level.INFO, "Calculated route for agent: " + thisAgent +
         		                  " from: " + agentFrom + 
         		                  " to: " + agentTo + " is: " + finalRoute.toString());
-        		                  */
+
+        System.out.println("Calculated route for agent: " + thisAgent +
+                " from: " + agentFrom +
+                " to: " + agentTo + " is: " + finalRoute.toString() + "\n");
+
+        String outData = "Calculated route for agent: " + thisAgent +
+                " from: " + agentFrom +
+                " to: " + agentTo + " is: " + finalRoute.toString() + "\n";
+
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+
+        File file = new File("GRID_Test_Results\\"
+                + dateFormat.format(date) + "_" + weightType + "_test_results.txt");
+        writeStringToFile(new File(String.valueOf(file)), outData, encoding, true);
 
         return finalRoute;
     }

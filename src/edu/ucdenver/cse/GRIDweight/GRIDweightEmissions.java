@@ -13,40 +13,44 @@ public class GRIDweightEmissions implements GRIDweight {
     }
 
     @Override
-    public double calcWeight (String fromNode, String toNode, long startTime) {
+    public double calcWeight (String fromNode, String toNode, long startTime, double speedModifier) {
 
         GRIDroad road = theMap.hasRoad(fromNode, toNode);
 
-        double currentSpeed = road.getCurrentSpeed();
+        double currentSpeed = road.getCurrentSpeed()*speedModifier;
         double roadLength = road.getLength();
 
         double emissions = 0.0;
 
         if(currentSpeed == 0){
+            System.out.println("*****MAX_WEIGHT*****\n");
             return MAX_WEIGHT;
         }
-        else if(currentSpeed <= tierOne){
+        else if(currentSpeed == tierOne*speedModifier){
             emissions = ((tierOne/currentSpeed)*tierOneEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed <= tierTwo){
+        else if(currentSpeed == tierTwo*speedModifier){
             emissions = ((tierTwo/currentSpeed)*tierTwoEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed <= tierThree){
+        else if(currentSpeed == tierThree*speedModifier){
             emissions = ((tierThree/currentSpeed)*tierThreeEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed <= tierFour){
+        else if(currentSpeed == tierFour*speedModifier){
             emissions = ((tierFour/currentSpeed)*tierFourEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed <= tierFive){
+        else if(currentSpeed == tierFive*speedModifier){
             emissions = ((tierFive/currentSpeed)*tierFiveEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed <= tierSix){
+        else if(currentSpeed == tierSix*speedModifier){
             emissions = ((tierSix/currentSpeed)*tierSixEmissions)*roadLength/mileInMeters;
+            if(speedModifier == 0) {
+                System.out.println("calcWeight says...\nSpeed Modifier: " + speedModifier + " Emissions: " + emissions + "\n");
+            }
         }
-        else if(currentSpeed <= tierSeven){
+        else if(currentSpeed == tierSeven*speedModifier){
             emissions = ((tierSeven/currentSpeed)*tierSevenEmissions)*roadLength/mileInMeters;
         }
-        else if(currentSpeed <= tierEight){
+        else if(currentSpeed == tierEight*speedModifier){
             emissions = ((tierEight/currentSpeed)*tierEightEmissions)*roadLength/mileInMeters;
         }
         else{

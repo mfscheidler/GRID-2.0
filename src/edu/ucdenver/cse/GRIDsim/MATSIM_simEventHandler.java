@@ -120,7 +120,7 @@ public class MATSIM_simEventHandler implements MobsimBeforeSimStepListener, Mobs
 
 			while (iter.hasNext()) {
 				Link tempLink = iter.next();
-				theMap.getRoad(tempLink.getId().toString()).setCurrentSpeed(tempLink.getFreespeed());
+				theMap.getRoad(tempLink.getId().toString()).setCurrentSpeed(tempLink.getFreespeed()*0.1);
 			}
 		}
 
@@ -276,6 +276,11 @@ public class MATSIM_simEventHandler implements MobsimBeforeSimStepListener, Mobs
 
 			logWriter.log(Level.INFO,
 					"Agent " + tempGRIDagent.getId() + " has arrived at its destination" );
+			logWriter.log(Level.INFO,
+					"Calculated route for agent " + tempGRIDagent.getId() + " from: " + tempGRIDagent.getOrigin() +
+							" to: " + tempGRIDagent.getDestination() + " is: " + tempGRIDagent.getCurrentRoute().toString());
+			System.out.println("Calculated route for agent " + tempGRIDagent.getId() + " from: " + tempGRIDagent.getOrigin() +
+					" to: " + tempGRIDagent.getDestination() + " is: " + tempGRIDagent.getCurrentRoute().toString());
 
 			return true;
 		}

@@ -13,6 +13,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.ParseException;
@@ -21,9 +23,10 @@ import org.apache.commons.io.FilenameUtils;
 
 import javax.swing.*;
 
+import static org.apache.commons.io.FileUtils.current;
 import static org.apache.commons.io.FileUtils.writeStringToFile;
 
-public class GRIDtestRunner{
+public class GRIDrunner{
 
     private static CommandLine theCmdLine;
 
@@ -37,27 +40,33 @@ public class GRIDtestRunner{
         String outData = "";
         double totalMiles = 0.0;
         double totalEmissions = 0.0;
-        GRIDtestRunnerCmdLine cmdLine = new GRIDtestRunnerCmdLine(args);
+        double speedModifier = 1.0;
+        String currentRoad = "";
+        GRIDrunnerCmdLine cmdLine = new GRIDrunnerCmdLine(args);
 
         // command line options are -s and -t for speed and time respectively
         try {
             theCmdLine = cmdLine.parseArgs();
         }
         catch (ParseException e) {
-            System.out.println("GRIDtestRunner has encountered an error: " + e.toString());
+            System.out.println("GRIDrunner has encountered an error: " + e.toString());
         }
 
-        if (theCmdLine.hasOption("s")) {
+        if (theCmdLine.hasOption("-s")) {
             weightType = "speed";
-            System.out.println("GRIDtestRunner will use weight type: " + weightType);
+            System.out.println("GRIDrunner will use weight type: " + weightType);
         }
-        else if(theCmdLine.hasOption("t")) {
+        else if(theCmdLine.hasOption("-t")) {
             weightType = "time";
-            System.out.println("GRIDtestRunner will use weight type: " + weightType);
+            System.out.println("GRIDrunner will use weight type: " + weightType);
         }
         else {
-            System.out.println("No weight type option specified for GRIDtestRunner"
-                                + "--default weight type \"time\" will be used.");
+            System.out.println("No weight type option specified for GRIDrunner"
+                    + "--default weight type \"time\" will be used.");
+        }
+
+        if(theCmdLine.hasOption("-mod")) {
+            System.out.println("GRIDrunner will use speed modifier: " + Double.parseDouble(theCmdLine.getOptionValue("mod")));
         }
 
 
@@ -75,10 +84,9 @@ public class GRIDtestRunner{
 
                 if(toFromLinksFile != null) {
                     String toFromLinksFileStr = FileUtils.readFileToString(toFromLinksFile, encoding);
-
                     String[] splitToFromLinks = toFromLinksFileStr.split("\n");
 
-                    System.out.println("\nStarting test. . .");
+                    System.out.println("\nStarting run. . .");
                     String mapFileName = FilenameUtils.getBaseName(mapFile.getName());
                     System.out.println("Map File: " + mapFileName);
 
@@ -89,23 +97,85 @@ public class GRIDtestRunner{
 
                         String agentFrom = myMap.getRoad(testAgent001.getCurrentLink()).getTo();
                         String agentTo = myMap.getRoad(testAgent001.getDestination()).getFrom();
+                        String modRoad = "";
+
+                        int accidentLocation = 4;
 
                         GRIDpathfinder theALG = new GRIDpathfinder(myMap, weightType);
-                        GRIDroute outRoute = theALG.findPath(testAgent001, 0L,1, "", "");
+                        GRIDroute outRoute = theALG.findPath(testAgent001, 0L, speedModifier, currentRoad, modRoad);
 
                         if (outRoute.getAgent_ID() != "Destination unreachable") {
                             System.out.println("Successfully calculated route for agent " + i);
                             mainEmissionsContainer.appendOutputString("Calculated route for agent "
                                     + i + ": " +
                                     " from: " + agentFrom +
-                                    " to: " + agentTo + " is: " + outRoute.toString());
+                                    " to: " + agentTo + " is: " + outRoute.toString() + "\n");
                         } else {
                             System.out.println("Destination Unreachable");
                         }
 
+                        String[] splitOutRoute = outRoute.toString().split(" ");
+                        ArrayList<String> splitOutRouteList = new ArrayList<>(Arrays.asList(splitOutRoute));
+                        splitOutRouteList.ensureCapacity(50);
+
+                        for(int n = 0; n < 20; n++){
+                            splitOutRouteList.add("");
+                        }
+
+                        System.out.println("List cap: " + splitOutRouteList.size());
+
+                        String tempString = testAgent001.getCurrentLink() + " ";
+
+                        for (int j = 2; j < splitOutRouteList.size(); j++){
+                            tempString += splitOutRouteList.get(j) + " ";
+
+                            if(splitOutRouteList.get(j) == ""){
+                                continue;
+                            }
+                            testAgent001.setOrigin(myMap.getRoad(splitOutRouteList.get(j)).getTo());
+                            testAgent001.setLink(splitOutRouteList.get(j));
+
+                            if(j == accidentLocation){
+                                currentRoad = splitOutRouteList.get(j);
+                                modRoad = splitOutRouteList.get(j+1);
+                                speedModifier = Double.parseDouble(theCmdLine.getOptionValue("mod"));
+                                System.out.println("\nGRIDrunner says. . .\n" +
+                                                   "Current Road: " + currentRoad + "\nModified Road: " + modRoad +
+                                                   "\nSpeed Modifier: " + speedModifier + "\n");
+                            }
+
+                            outRoute = theALG.findPath(testAgent001, 0L, speedModifier, currentRoad, modRoad);
+
+                            if(j == accidentLocation){
+                                System.out.println("We're in the if statement");
+                                System.out.println("\n***** ROUTE CHANGED *****\n");
+                                mainEmissionsContainer.appendOutputString("\n***** ROUTE CHANGED *****\n");
+                                String[] splitNewOutRoute = outRoute.toString().split(" ");
+                                for(int k = 1; k < splitNewOutRoute.length; k++){
+                                    splitOutRouteList.set(k+accidentLocation,splitNewOutRoute[k]);
+                                    System.out.println("splitOutRoute[" + (k+accidentLocation) + "]: " + splitOutRouteList.get(k+accidentLocation) +
+                                                       " splitNewOutRoute[" + k + "]: " + splitNewOutRoute[k]);
+                                }
+                            }
+
+                            mainEmissionsContainer.appendOutputString("\nCalculated route for agent "
+                                    + i + ": " +
+                                    " from: " + agentFrom +
+                                    " to: " + agentTo + " is: " + outRoute.toString() + "\n");
+
+                            System.out.println("Link: " + splitOutRouteList.get(j));
+
+                            currentRoad = "";
+                            modRoad = "";
+
+                        }
+
+                        System.out.println("tempString: " + tempString);
+                        mainEmissionsContainer.appendOutputString("\nFinal Route: " + tempString + "\n");
+
                         SpeedReader speedReader = new SpeedReader();
                         EmissionsContainer tempEmissionsContainer = new EmissionsContainer();
-                        tempEmissionsContainer = speedReader.readWriteSpeedString(outRoute.toString(), mapFileStr);
+                        tempEmissionsContainer = speedReader.readWriteSpeedString(tempString, mapFileStr);
 
                         mainEmissionsContainer.sumEmissionsTotal(tempEmissionsContainer.getEmissionsTotal());
                         mainEmissionsContainer.sumRoadLengthTotal(tempEmissionsContainer.getRoadLengthTotal());
@@ -175,6 +245,12 @@ public class GRIDtestRunner{
         tempStringTo = toAndFromLinks.substring(startIndex, stopIndex);
 
         GRIDagent myAgent = new GRIDagent(agtID,tempStringFrom,tempStringFrom,tempStringTo, false, false);
+
+        return myAgent;
+    }
+
+    private static GRIDagent getTestAgent(String from, String to){
+        GRIDagent myAgent = new GRIDagent("testAgent",from,from,to, false, false);
 
         return myAgent;
     }
