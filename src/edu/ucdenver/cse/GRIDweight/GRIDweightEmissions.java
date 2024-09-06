@@ -23,7 +23,7 @@ public class GRIDweightEmissions implements GRIDweight {
         double emissions = 0.0;
 
         if(currentSpeed == 0){
-            System.out.println("*****MAX_WEIGHT*****\n");
+            //System.out.println("*****MAX_WEIGHT*****\n");
             return MAX_WEIGHT;
         }
         else if(currentSpeed == tierOne*speedModifier){

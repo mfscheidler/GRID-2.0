@@ -42,7 +42,7 @@ public class GRIDpathfinder {
 
         if (weightType.equalsIgnoreCase("SPEED")) {
         	logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
-            System.out.println("Pathfinder says: Alternate weight function \"SPEED\" selected");
+            //System.out.println("Pathfinder says: Alternate weight function \"SPEED\" selected");
 
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
         	theWeighter = new GRIDweightEmissions(ourMap);
@@ -111,11 +111,6 @@ public class GRIDpathfinder {
 
         long arrivalTime;
     	double arrivalWeight;
-        
-    	/*logWriter.log(Level.INFO, "Starting route for: " + agentID +
-    			                  " from: " + agentFrom +
-    			                  " to: "   + agentTo +
-    			                  " at time: " + currentTime);*/
     			                  
         while (!pq.isEmpty())
         {
@@ -137,13 +132,13 @@ public class GRIDpathfinder {
             	
                 GRIDroad curRoad = ourMap.hasRoad(currFibEntry.getValue(), arc);
 
-                if(!currentRoad.isEmpty()) {
+                /*if(!currentRoad.isEmpty()) {
                     System.out.println("curRoad: " + curRoad.getId() + " Current Road: " + currentRoad + "\n");
-                }
+                }*/
 
                 if (curRoad.getId().equals(modRoad)) { // 46131267_3 modRoad
                     spdModifier = speedModifier;
-                    System.out.println("Current Road: " + curRoad.getId() + "\nModified Road: " + modRoad + "\n");
+                    //System.out.println("Current Road: " + curRoad.getId() + "\nModified Road: " + modRoad + "\n");
                 }
                 else{
                     spdModifier = 1;
@@ -263,24 +258,17 @@ public class GRIDpathfinder {
 	        }
         }
         
-        logWriter.log(Level.INFO, "Calculated route for agent: " + thisAgent +
+        /*logWriter.log(Level.INFO, "Calculated route for agent: " + thisAgent +
         		                  " from: " + agentFrom + 
-        		                  " to: " + agentTo + " is: " + finalRoute.toString());
+        		                  " to: " + agentTo + " is: " + finalRoute.toString());*/
 
         System.out.println("Calculated route for agent: " + thisAgent +
                 " from: " + agentFrom +
                 " to: " + agentTo + " is: " + finalRoute.toString() + "\n");
 
-        String outData = "Calculated route for agent: " + thisAgent +
+        /*String outData = "Calculated route for agent: " + thisAgent +
                 " from: " + agentFrom +
-                " to: " + agentTo + " is: " + finalRoute.toString() + "\n";
-
-        Date date = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
-
-        File file = new File("GRID_Test_Results\\"
-                + dateFormat.format(date) + "_" + weightType + "_test_results.txt");
-        writeStringToFile(new File(String.valueOf(file)), outData, encoding, true);
+                " to: " + agentTo + " is: " + finalRoute.toString() + "\n";*/
 
         return finalRoute;
     }

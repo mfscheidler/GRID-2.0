@@ -79,13 +79,13 @@ public class EmissionsCalculator {
         emissions = (double)Math.round(emissions * 10000d) / 10000d;
 
         System.out.println("\nTotal Road Length for Agent:\t" + lengthInMiles + " miles");
-        System.out.println("Total Emissions for Agent:\t" + emissions + " g");
-        System.out.println("Grams per Mile for Agent:\t" + gramsPerMile + "\n");
+        System.out.println("Total Emissions for Agent:\t\t" + emissions + " g");
+        System.out.println("Grams per Mile for Agent:\t\t" + gramsPerMile + "\n");
 
         String endString = "";
         endString += "\nTotal Road Length for Agent:\t" + lengthInMiles + " miles";
         endString += "\nTotal Emissions for Agent:\t\t" + emissions + " g";
-        endString += "\nGrams per Mile for Agent:\t\t" + gramsPerMile + "\n\n";
+        endString += "\nGrams per Mile for Agent:\t\t" + gramsPerMile + "\n";
         endString += sysString;
 
         EmissionsContainer emissionsContainer = new EmissionsContainer();

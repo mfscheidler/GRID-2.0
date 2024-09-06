@@ -8,6 +8,7 @@
 /classes
 config/dtd/
 *.log
+*.lck
 /output*
 /bin*
 /download*
@@ -24,4 +25,5 @@ config/5x5Config_1_internal.xml
 /manifests
 data/AlamosaPopulation_23.xml
 /Emissions_Test_Config
+/Emissions_Test_Results
 GRID_Test_Results

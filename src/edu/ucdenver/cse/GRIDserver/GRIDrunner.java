@@ -88,7 +88,7 @@ public class GRIDrunner{
 
                     System.out.println("\nStarting run. . .");
                     String mapFileName = FilenameUtils.getBaseName(mapFile.getName());
-                    System.out.println("Map File: " + mapFileName);
+                    System.out.println("Map File: " + mapFileName + "\n");
 
                     long startTime = System.nanoTime();
 
@@ -99,15 +99,13 @@ public class GRIDrunner{
                         String agentTo = myMap.getRoad(testAgent001.getDestination()).getFrom();
                         String modRoad = "";
 
-                        int accidentLocation = 4;
+                        int accidentLocation = 27;
 
                         GRIDpathfinder theALG = new GRIDpathfinder(myMap, weightType);
                         GRIDroute outRoute = theALG.findPath(testAgent001, 0L, speedModifier, currentRoad, modRoad);
 
                         if (outRoute.getAgent_ID() != "Destination unreachable") {
-                            System.out.println("Successfully calculated route for agent " + i);
-                            mainEmissionsContainer.appendOutputString("Calculated route for agent "
-                                    + i + ": " +
+                            mainEmissionsContainer.appendOutputString("Calculated route for agent: " +
                                     " from: " + agentFrom +
                                     " to: " + agentTo + " is: " + outRoute.toString() + "\n");
                         } else {
@@ -122,7 +120,7 @@ public class GRIDrunner{
                             splitOutRouteList.add("");
                         }
 
-                        System.out.println("List cap: " + splitOutRouteList.size());
+                        //System.out.println("List cap: " + splitOutRouteList.size());
 
                         String tempString = testAgent001.getCurrentLink() + " ";
 
@@ -139,38 +137,40 @@ public class GRIDrunner{
                                 currentRoad = splitOutRouteList.get(j);
                                 modRoad = splitOutRouteList.get(j+1);
                                 speedModifier = Double.parseDouble(theCmdLine.getOptionValue("mod"));
-                                System.out.println("\nGRIDrunner says. . .\n" +
+                                /*System.out.println("\nGRIDrunner says. . .\n" +
                                                    "Current Road: " + currentRoad + "\nModified Road: " + modRoad +
-                                                   "\nSpeed Modifier: " + speedModifier + "\n");
+                                                   "\nSpeed Modifier: " + speedModifier + "\n");*/
                             }
 
                             outRoute = theALG.findPath(testAgent001, 0L, speedModifier, currentRoad, modRoad);
 
                             if(j == accidentLocation){
-                                System.out.println("We're in the if statement");
-                                System.out.println("\n***** ROUTE CHANGED *****\n");
-                                mainEmissionsContainer.appendOutputString("\n***** ROUTE CHANGED *****\n");
+                                System.out.println("There's been an accident.");
+                                System.out.println("***** ROUTE CHANGED *****\n");
+                                mainEmissionsContainer.appendOutputString(("\nThere's been an accident.\n"));
+                                mainEmissionsContainer.appendOutputString("***** ROUTE CHANGED *****\n");
                                 String[] splitNewOutRoute = outRoute.toString().split(" ");
                                 for(int k = 1; k < splitNewOutRoute.length; k++){
                                     splitOutRouteList.set(k+accidentLocation,splitNewOutRoute[k]);
-                                    System.out.println("splitOutRoute[" + (k+accidentLocation) + "]: " + splitOutRouteList.get(k+accidentLocation) +
-                                                       " splitNewOutRoute[" + k + "]: " + splitNewOutRoute[k]);
+                                    /*System.out.println("splitOutRoute[" + (k+accidentLocation) + "]: " + splitOutRouteList.get(k+accidentLocation) +
+                                                       " splitNewOutRoute[" + k + "]: " + splitNewOutRoute[k]);*/
                                 }
                             }
 
-                            mainEmissionsContainer.appendOutputString("\nCalculated route for agent "
-                                    + i + ": " +
-                                    " from: " + agentFrom +
-                                    " to: " + agentTo + " is: " + outRoute.toString() + "\n");
+                            if(!outRoute.toString().isEmpty()) {
+                                mainEmissionsContainer.appendOutputString("\nCalculated route for agent: " +
+                                        " from: " + agentFrom +
+                                        " to: " + agentTo + " is: " + outRoute.toString() + "\n");
+                            }
 
-                            System.out.println("Link: " + splitOutRouteList.get(j));
+                            //System.out.println("Link: " + splitOutRouteList.get(j));
 
                             currentRoad = "";
                             modRoad = "";
 
                         }
 
-                        System.out.println("tempString: " + tempString);
+                        System.out.println("Final Route: " + tempString);
                         mainEmissionsContainer.appendOutputString("\nFinal Route: " + tempString + "\n");
 
                         SpeedReader speedReader = new SpeedReader();
@@ -184,24 +184,12 @@ public class GRIDrunner{
 
                     // prepare output data
                     outData = mainEmissionsContainer.getOutputString();
-                    totalMiles += mainEmissionsContainer.getRoadLengthTotal();
-                    totalEmissions += mainEmissionsContainer.getEmissionsTotal();
-                    outData += "Network: \t\t\t" + mapFileName + "\n";
-                    outData += "Total Agents:\t\t" + splitToFromLinks.length + "\n";
-                    outData += "Total Miles:\t\t" + totalMiles + "\n";
-                    outData += "Total Emissions:\t" + totalEmissions + " g\n";
-                    outData += "Average g/Mile:\t\t" + totalEmissions / totalMiles + "\n";
-
-                    System.out.println("Network:\t\t" + mapFileName);
-                    System.out.println("Total Agents:\t\t" + splitToFromLinks.length);
-                    System.out.println("Total Miles:\t\t" + totalMiles);
-                    System.out.println("Total Emissions:\t" + totalEmissions + " g\n");
-                    System.out.println("Average g/Mile:\t\t" + totalEmissions / totalMiles + "\n");
+                    outData += "Network: \t\t\t\t\t\t" + mapFileName + "\n";
 
                     long stopTime = System.nanoTime();
                     long timeToRun = ((stopTime - startTime) / 1000000);
 
-                    System.out.print("\nTook " + timeToRun / 1000.0 + " Seconds\n");
+                    System.out.print("Took " + timeToRun / 1000.0 + " Seconds\n");
                     outData += "\nTook " + timeToRun / 1000.0 + " Seconds\n";
 
                     try {
@@ -215,7 +203,7 @@ public class GRIDrunner{
                         throw new Exception(e);
                     }
 
-                    System.out.print("\nAnd we're done.\n");
+                    System.out.print("And we're done.\n");
                 }
                 else {
                     System.out.println("File selection cancelled.");

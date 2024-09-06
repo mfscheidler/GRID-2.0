@@ -27,7 +27,7 @@ public class GRIDweightTimeAvg implements GRIDweight{
     		return MAX_WEIGHT;
     	}
     	
-    	double currentSpeed = road.getCurrentSpeed();
+    	double currentSpeed = road.getCurrentSpeed()*speedModifier;
     	
     	if(currentSpeed == 0)
             return MAX_WEIGHT;
