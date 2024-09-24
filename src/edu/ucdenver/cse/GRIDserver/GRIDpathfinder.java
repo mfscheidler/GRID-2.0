@@ -3,21 +3,14 @@ package edu.ucdenver.cse.GRIDserver;
 import edu.ucdenver.cse.GRIDcommon.GRIDagent;
 import edu.ucdenver.cse.GRIDcommon.GRIDroute;
 import edu.ucdenver.cse.GRIDcommon.GRIDrouteSegment;
-import edu.ucdenver.cse.GRIDcommon.logWriter;
 import edu.ucdenver.cse.GRIDmap.*;
 import edu.ucdenver.cse.GRIDweight.*;
-import org.apache.commons.io.FilenameUtils;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.io.File;
-import java.util.logging.Level;
 import java.util.concurrent.*;
 import java.util.*;
-import static org.apache.commons.io.FileUtils.writeStringToFile;
+
 
 public class GRIDpathfinder {
     private GRIDmap ourMap;
@@ -41,9 +34,6 @@ public class GRIDpathfinder {
         routeSegments = new ConcurrentHashMap<String, GRIDrouteSegment>();
 
         if (weightType.equalsIgnoreCase("SPEED")) {
-        	logWriter.log(Level.INFO, "Pathfinder says: Alternate weight function \"SPEED\" selected");
-            //System.out.println("Pathfinder says: Alternate weight function \"SPEED\" selected");
-
         	// CHANGE HERE TO USE YOUR WEIGHT FUNCTION
         	theWeighter = new GRIDweightEmissions(ourMap);
         }
@@ -69,8 +59,6 @@ public class GRIDpathfinder {
         String agentTo;
         String agentID;
 
-        double totalEmissions = 0.0;
-
         // The agent is already on the link, so we need its endpoint
         agentID = thisAgent.getId();
         		     
@@ -88,7 +76,6 @@ public class GRIDpathfinder {
         if (agentTo.equals(agentFrom)) {
         	
         	// RCS clean this up
-        	//logWriter.log(Level.WARNING, "Agent: " + thisAgent.getId() + " already at destination: " + agentTo);
         	return genDummyRoute("ARRIVED");
         }
         
@@ -138,17 +125,9 @@ public class GRIDpathfinder {
 
                 if (curRoad.getId().equals(modRoad)) { // 46131267_3 modRoad
                     spdModifier = speedModifier;
-                    //System.out.println("Current Road: " + curRoad.getId() + "\nModified Road: " + modRoad + "\n");
                 }
                 else{
                     spdModifier = 1;
-                    currentRoad = "";
-                }
-
-                if (curRoad.equals(null)) {
-                	logWriter.log(Level.WARNING, "Unable to find road from: " + currFibEntry.getValue()+
-                			                     " to: " + arc);
-                	continue;
                 }
             	                                   	
             	// Get the weight from the current node to the proposed node
@@ -167,7 +146,7 @@ public class GRIDpathfinder {
                 GRIDfibHeap.Entry dest = fibEntryList.get(arc);
 
                 double newWeight = calcWeight + arrivalWeight;
-                totalEmissions += newWeight;
+                //totalEmissions += newWeight;
                 		
                 // If we can get to dest for less than the previous best, we want to use this route
                 if (newWeight < dest.getWtTotal()) {
@@ -213,7 +192,6 @@ public class GRIDpathfinder {
         // Start with the destination and build the route recursively
         
         if(!routeSegments.containsKey(agentTo)){
-            //logWriter.log(Level.WARNING, "Agent " + agentID + " is going to: " + agentTo + " - but that doesn't exist in the returned list");
             System.out.println("Agent " + agentID + " is going to: " + agentTo + " - but that doesn't exist in the returned list");
         	return genDummyRoute("Destination unreachable");
         }
@@ -221,17 +199,15 @@ public class GRIDpathfinder {
         tempSegment = (GRIDrouteSegment) routeSegments.get(agentTo);
         
         if( tempSegment == null) {
-        	//logWriter.log(Level.WARNING, "Destination intersection not found in route! from was: " + agentFrom + " dest was: " + agentTo);
         	return genDummyRoute("Destination unreachable");
         }
         
         // Put the final segment into the route
         finalRoute.pushSegment(tempSegment);
-        
+
         // If this is the only segment needed for the route
         if (tempSegment.getStartIntersection().equals(agentFrom)) {
-        	//System.out.println("Agent " + agentID + " only has 1 leg in it's route" );
-        	//logWriter.log(Level.INFO, "GRIDpathfinder::findPath - Agent " + agentID + " only has 1 leg in it's route - the next step should be arrival" );
+        	// System.out.println("Agent " + agentID + " only has 1 leg in it's route" );
         }
         
         else {
@@ -242,9 +218,6 @@ public class GRIDpathfinder {
 	        		        	
 	        	// This MAY be the place where we are already at our route - I.E. we left from the s
 	        	if( tempSegment == null) {
-        		
-	            	//logWriter.log(Level.WARNING, "GRIDpathfinder::findPath - Destination intersection not found in route for agent: " +
-                    //                              agentID + " from: " + agentFrom + " to: " + agentTo);
 	            	return genDummyRoute("Destination unreachable");
 	            }
 	            
@@ -257,18 +230,9 @@ public class GRIDpathfinder {
 	            }
 	        }
         }
-        
-        /*logWriter.log(Level.INFO, "Calculated route for agent: " + thisAgent +
-        		                  " from: " + agentFrom + 
-        		                  " to: " + agentTo + " is: " + finalRoute.toString());*/
 
-        System.out.println("Calculated route for agent: " + thisAgent +
-                " from: " + agentFrom +
-                " to: " + agentTo + " is: " + finalRoute.toString() + "\n");
-
-        /*String outData = "Calculated route for agent: " + thisAgent +
-                " from: " + agentFrom +
-                " to: " + agentTo + " is: " + finalRoute.toString() + "\n";*/
+        System.out.println("Calculated route for " + thisAgent + " is: "  +
+                           finalRoute.toString() + "\n");
 
         return finalRoute;
     }
